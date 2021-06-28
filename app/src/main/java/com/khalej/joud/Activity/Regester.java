@@ -12,11 +12,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.location.Address;
-import android.location.Geocoder;
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Looper;
@@ -72,27 +67,20 @@ import retrofit2.Response;
 
 
 public class Regester extends AppCompatActivity {
-    TextInputEditText name,phone,email,password,confirmPassword,location;
+    EditText name,phone,email,password,confirmPassword;
     private SharedPreferences sharedpref;
     private SharedPreferences.Editor edt;
     AppCompatButton regeister;
     private apiinterface_home apiinterface;
     private contact_general_user contactList;
     ProgressDialog progressDialog;
-    LocationTrack locationTrack;
+
     CallbackManager callbackManager;
     private contact_general_user.contact_user  contact_user;
     private contact_general_user.contact_user_info contact_user_info;
     List<contact_country> contactListCategory= new ArrayList<>();
     Spinner spin,spinCategory;
-    int PERMISSION_ID = 44;
-    FusedLocationProviderClient mFusedLocationClient;
-    int PERMISSION_ACCESS_COARSE_LOCATION =2;
     double lat=0.0,lng=0.0;
-    protected LocationManager locationManager;
-    protected LocationListener locationListener;
-    private final static int ALL_PERMISSIONS_RESULT = 101;
-    private static final int REQUEST_LOCATION = 1;
     CheckBox Terms;
     TextView ShowTerms;
     user userData=new user();
@@ -109,8 +97,8 @@ public class Regester extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         this.getWindow().setStatusBarColor(ContextCompat.getColor(this,R.color.colorPrimaryDark));
-
         setContentView(R.layout.activity_regester);
         inisialize();
         mAuth=FirebaseAuth.getInstance();
@@ -126,50 +114,14 @@ public class Regester extends AppCompatActivity {
         intent=getIntent();
         Calligrapher calligrapher = new Calligrapher(this);
         calligrapher.setFont(this, "Droid.ttf", true);
-        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
-        getLastLocation();
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
-                != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[] { Manifest.permission.ACCESS_COARSE_LOCATION },
-                    PERMISSION_ACCESS_COARSE_LOCATION);
-        }
-        locationTrack = new LocationTrack(Regester.this);
-        if (locationTrack.canGetLocation()) {
 
-
-            lng = locationTrack.getLongitude();
-            lat = locationTrack.getLatitude();
-
-            //    Toast.makeText(getApplicationContext(), "Longitude:" + Double.toString(lng) + "\nLatitude:" + Double.toString(lat), Toast.LENGTH_SHORT).show();
-        } else {
-
-            locationTrack.showSettingsAlert();
-        }
-
-        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
-            buildAlertMessageNoGps();
-
-        } else if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
-            getLocation();
-        }
         sharedpref = getSharedPreferences("Education", Context.MODE_PRIVATE);
         edt = sharedpref.edit();
         edt.putString("lat", String.valueOf(lat));
         edt.putString("lng", String.valueOf(lng));
         edt.apply();
-        Geocoder geocoder;
-        List<Address> addresses = null;
-        geocoder = new Geocoder(this, Locale.getDefault());
 
-        try {
-            addresses = geocoder.getFromLocation(lat, lng, 1);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-       // fetchgetCategory();
         spin=findViewById(R.id.spinCountry);
-        location.setText(addresses.get(0).getAddressLine(0));
         spin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -229,12 +181,7 @@ public class Regester extends AppCompatActivity {
              //   startActivity(new Intent(Regester.this,Terms.class));
             }
         });
-        if (Build.VERSION.SDK_INT >= 23) {
-            int permissionCheck = ContextCompat.checkSelfPermission(Regester.this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
-            if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(Regester.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
-            }
-        }
+
 
     }
 
@@ -305,205 +252,16 @@ public class Regester extends AppCompatActivity {
         });
     }
     public void inisialize() {
-        name = (TextInputEditText) findViewById(R.id.textInputEditTextname);
-        phone = (TextInputEditText) findViewById(R.id.textInputEditTextphone);
-        email = (TextInputEditText) findViewById(R.id.textInputEditTextemail);
-        password = (TextInputEditText) findViewById(R.id.textInputEditTextpassword);
-        location=findViewById(R.id.textInputEditTextLocation);
+        name = findViewById(R.id.textInputEditTextname);
+        phone = findViewById(R.id.textInputEditTextphone);
+        email =  findViewById(R.id.textInputEditTextemail);
+        password =  findViewById(R.id.textInputEditTextpassword);
         Terms=findViewById(R.id.check);
         ShowTerms=findViewById(R.id.showterms);
-        confirmPassword = (TextInputEditText) findViewById(R.id.textInputEditTextConfirmpassword);
+        confirmPassword =  findViewById(R.id.textInputEditTextConfirmpassword);
         regeister = (AppCompatButton) findViewById(R.id.appCompatButtonRegisterservcies);
 
     }
-    @SuppressLint("MissingPermission")
-    private void getLastLocation(){
-        if (checkPermissions()) {
-            if (isLocationEnabled()) {
-                mFusedLocationClient.getLastLocation().addOnCompleteListener(
-                        new OnCompleteListener<Location>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Location> task) {
-                                Location location = task.getResult();
-                                if (location == null) {
-                                    requestNewLocationData();
-                                } else {
-                                    lat=location.getLatitude();
-                                    lng=location.getLongitude();
-
-                                }
-                            }
-                        }
-                );
-            } else {
-                Toast.makeText(this, "Turn on location", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-                startActivity(intent);
-            }
-        } else {
-            requestPermissions();
-        }
-    }
-    @SuppressLint("MissingPermission")
-    private void requestNewLocationData(){
-        LocationRequest mLocationRequest = new LocationRequest();
-        mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
-        mLocationRequest.setInterval(0);
-        mLocationRequest.setFastestInterval(0);
-        mLocationRequest.setNumUpdates(1);
-
-        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
-        mFusedLocationClient.requestLocationUpdates(
-                mLocationRequest, mLocationCallback,
-                Looper.myLooper()
-        );
-
-    }
-
-    private LocationCallback mLocationCallback = new LocationCallback() {
-        @Override
-        public void onLocationResult(LocationResult locationResult) {
-            Location mLastLocation = locationResult.getLastLocation();
-            lat=mLastLocation.getLatitude();
-            lng=mLastLocation.getLongitude();
-
-        }
-    };
-
-    private boolean checkPermissions() {
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED &&
-                ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-            return true;
-        }
-        return false;
-    }
-
-    private void requestPermissions() {
-        ActivityCompat.requestPermissions(
-                this,
-                new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION},
-                PERMISSION_ID
-        );
-    }
-
-    private boolean isLocationEnabled() {
-        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) || locationManager.isProviderEnabled(
-                LocationManager.NETWORK_PROVIDER
-        );
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == PERMISSION_ID) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                getLastLocation();
-            }
-        }
-    }
-
-    @Override
-    public void onResume(){
-        super.onResume();
-        if (checkPermissions()) {
-            getLastLocation();
-        }
-
-    }
-    private void getLocation() {
-        if (ActivityCompat.checkSelfPermission(Regester.this, Manifest.permission.ACCESS_FINE_LOCATION)
-                != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission
-                (Regester.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-
-            ActivityCompat.requestPermissions(Regester.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
-
-        } else {
-            Location location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
-
-            Location location1 = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-
-            Location location2 = locationManager.getLastKnownLocation(LocationManager. PASSIVE_PROVIDER);
-
-            if (location != null) {
-                lat = location.getLatitude();
-                lng = location.getLongitude();
-
-            } else  if (location1 != null) {
-                lat = location1.getLatitude();
-                lng = location1.getLongitude();
 
 
-            } else  if (location2 != null) {
-                lat = location2.getLatitude();
-                lng = location2.getLongitude();
-
-
-            }else{
-
-                Toast.makeText(this,"Unble to Trace your location",Toast.LENGTH_SHORT).show();
-
-            }
-            if(lat==0){
-             /*   String uri = String.format(Locale.ENGLISH, "geo:%f,%f", 23.3728831, 85.3372199);
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
-                startActivity(intent);
-                Toast.makeText(Login.this,"قمنا بفتح جوجل ماب لتحديد موقعك الحالي",Toast.LENGTH_LONG).show();*/
-                getLocation();
-            }
-        }
-    }
-
-    protected void buildAlertMessageNoGps() {
-
-        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Please Turn ON your GPS Connection")
-                .setCancelable(false)
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    public void onClick(final DialogInterface dialog, final int id) {
-                        //     startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
-                    }
-                })
-                .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    public void onClick(final DialogInterface dialog, final int id) {
-                        dialog.cancel();
-                    }
-                });
-        final AlertDialog alert = builder.create();
-        alert.show();
-    }
-//    public void fetchgetCategory(){
-//        apiinterface = Apiclient_home.getapiClient().create(apiinterface_home.class);
-//        Call<List<contact_country>> call = apiinterface.Countrys();
-//        call.enqueue(new Callback<List<contact_country>>() {
-//            @Override
-//            public void onResponse(Call<List<contact_country>> call, Response<List<contact_country>> response) {
-//                contactListCategory=response.body();
-//                try {
-//                    if(contactListCategory.size()!=0){
-//                        ArrayList<String> arrayList = new ArrayList<>();
-//                        for (int i = 0; i < contactListCategory.size(); i++) {
-//
-//                            arrayList.add(contactListCategory.get(i).getAr_title());
-//                        }
-//                        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
-//                                Regester.this,
-//                                android.R.layout.simple_spinner_item,
-//                                arrayList
-//                        );
-//                        spin.setAdapter(adapter);
-//
-//
-//                    }
-//                }catch (Exception e){
-//
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<List<contact_country>> call, Throwable t) {
-//                //  Toast.makeText(CallUs.this, t.toString(), Toast.LENGTH_LONG).show();
-//            }
-//        });
-//    }
 }

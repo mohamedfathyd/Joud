@@ -38,7 +38,7 @@ import in.aabhasjindal.otptextview.OtpTextView;
 import me.anwarshahriar.calligrapher.Calligrapher;
 
 public class CodeMobile extends AppCompatActivity {
-TextInputEditText textInputEditTextphone;
+EditText textInputEditTextphone;
 AppCompatButton appCompatButtonRegisterservcies;
     ProgressDialog progressDialog;
     private apiinterface_home apiinterface;
@@ -55,6 +55,7 @@ Intent i;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         this.getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
 
         setContentView(R.layout.activity_code_mobile);

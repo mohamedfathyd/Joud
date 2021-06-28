@@ -33,7 +33,8 @@ public class intro_slider extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.getWindow().setStatusBarColor(ContextCompat.getColor(this,R.color.black));
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        this.getWindow().setStatusBarColor(ContextCompat.getColor(this,R.color.white));
         setContentView(R.layout.activity_intro_slider);
         dots=(LinearLayout)findViewById(R.id.dots_layout);
         viewPager=(ViewPager)findViewById(R.id.slideer_viewpager);
@@ -59,6 +60,11 @@ public class intro_slider extends AppCompatActivity {
         mNextbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(currentpage==2){
+                    Intent intent=new Intent(intro_slider.this,SelectLanguage.class);
+                    finish();
+                    startActivity(intent);
+                }
                 viewPager.setCurrentItem(currentpage+1);
 
             }
@@ -67,7 +73,7 @@ public class intro_slider extends AppCompatActivity {
         mSkipbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(intro_slider.this,Login.class);
+                Intent intent=new Intent(intro_slider.this,SelectLanguage.class);
                 finish();
                 startActivity(intent);
             }
@@ -114,8 +120,7 @@ public class intro_slider extends AppCompatActivity {
             else if(i==2){
                 mNextbtn.setEnabled(true);
                 mSkipbtn.setEnabled(true);
-                mNextbtn.setVisibility(View.INVISIBLE);
-                mNextbtn.setText("");
+                mNextbtn.setText("دخول");
                 mSkipbtn.setText("دخول");
 
 

@@ -35,8 +35,10 @@
             android:layout_height="wrap_content"
             android:text="slid title"
             android:layout_marginTop="20dp"
-            android:textColor="#ffffff"
-            android:textSize="18dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textColor="#022744"
+            android:textSize="20dp"
 
             />
 
@@ -45,11 +47,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-
-            android:textSize="16dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="18dp"
             android:text="slide discription"
 
-            android:textColor="#ffffff" />
+            android:textColor="#054F88" />
 
     </LinearLayout>
 </RelativeLayout>

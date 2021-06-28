@@ -45,8 +45,8 @@ public class MyViewPagerAdapter extends PagerAdapter {
     public int[] images = { //IMAGES
 
             R.drawable.introa,
-            R.drawable.sliderb,
-            R.drawable.sliderc
+            R.drawable.introb,
+            R.drawable.introc
     };
 
     public String[] descr = { //descriptions

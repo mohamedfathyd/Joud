@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -23,7 +24,8 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.black));
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        this.getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.white));
         setContentView(R.layout.activity_splash);
         Animation anim = AnimationUtils.loadAnimation(this, R.anim.alpha);
 
@@ -37,7 +39,7 @@ public class SplashActivity extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animation animation) {
-              startActivity(new Intent(SplashActivity.this, SplashTwo.class));
+              startActivity(new Intent(SplashActivity.this, intro_slider.class));
                 finish();
             }
 

@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name" >Joud</string>
-    <string name="hint_name" >name</string>
+    <string name="app_name">Joud</string>
+    <string name="hint_name">name</string>
     <string name="face">Login With Facebook</string>
     <string name="MySubscribe">MySubscribe</string>
     <string name="SubScribe">SubScribe</string>
@@ -88,15 +88,15 @@ Send us product details and we will bring it for you. </string>
     <string name="send">Send</string>
     <string name="men">men</string>
     <string name="women">women</string>
-    <string name="hint_phone" >mobile</string>
+    <string name="hint_phone">mobile</string>
     <string name="salon">Healthy salons</string>
     <string name="sport">Sports clubs</string>
     <string name="wedding">Wedding halls</string>
     <string name="meeting">Hospitality services</string>
-    <string name="whous" >Who us</string>
-    <string name="callus" >Call us</string>
+    <string name="whous">Who us</string>
+    <string name="callus">Call us</string>
     <string name="details">You must transfer the amount to the previous account or pay when you buy. </string>
-    <string name="myorders" >My orders</string>
+    <string name="myorders">My orders</string>
     <string name="ask">Are you sure you want to confirm and send this request?</string>
     <string name="addto">Add To Shopping Car</string>
     <string name="mobile">... Send a transfer receipt to WhatsApp: 971555733305 to complete your purchase</string>
@@ -105,29 +105,29 @@ Send us product details and we will bring it for you. </string>
     <string name="lang">عربي</string>
     <string name="whoustxt"> It is an application for an e-commerce platform that allows UAE merchants to view and sell products. Our motto is always from home to home. </string>
 
-    <string name="name" >name</string>
-    <string name="address" >Email</string>
-    <string name="phone" >Phone</string>
-    <string name="listorders" >List Of Orders</string>
-    <string name="confirm" >Confirm</string>
-    <string name="deletemontag" >Delete Orders</string>
-    <string name="login" >Login</string>
-    <string name="ignore" >Skip</string>
-    <string name="date" >birth date </string>
+    <string name="name">name</string>
+    <string name="address">Email</string>
+    <string name="phone">Phone</string>
+    <string name="listorders">List Of Orders</string>
+    <string name="confirm">Confirm</string>
+    <string name="deletemontag">Delete Orders</string>
+    <string name="login">Login</string>
+    <string name="ignore">Skip</string>
+    <string name="date">birth date </string>
 
-    <string name="password" >Password</string>
+    <string name="password">Password</string>
     <string name="newpassword">New Password </string>
 
     <string name="code">Code</string>
-    <string name="allmoney" >Cost</string>
-    <string name="hint_address" >Email</string>
-    <string name="hint_password" >Password</string>
-    <string name="hint_confirm_password" >Confirm Password </string>
-    <string name="text_login" >Login</string>
-    <string name="text_register" >Sign up ?</string>
+    <string name="allmoney">Cost</string>
+    <string name="hint_address">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_confirm_password">Confirm Password </string>
+    <string name="text_login">Login</string>
+    <string name="text_register">Sign up ?</string>
     <string name="forgetPassword">Forget Password</string>
     <string name="city">City</string>
-    <string name="text_not_member" >Registration</string>
+    <string name="text_not_member">Registration</string>
     <string name="search">Search</string>
     <string name="orderdetail">Order Details</string>
     <string name="terms">Terms and Conditions</string>
@@ -219,6 +219,7 @@ Purchase Terms:
     <string name="price">Price :</string>
     <string name="forgetPasword">if you need help reselting your password. we need to confirm your registiration  by your Email.</string>
 
-    <string name="facebook_app_id">657496788328201</string> <string name="fb_login_protocol_scheme">fb657496788328201</string>
+    <string name="facebook_app_id">657496788328201</string>
+    <string name="fb_login_protocol_scheme">fb657496788328201</string>
 
 </resources>

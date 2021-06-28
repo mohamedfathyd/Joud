@@ -5,7 +5,9 @@ import android.app.ProgressDialog;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
@@ -24,10 +26,10 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class ForgetPassword extends AppCompatActivity {
-TextInputEditText textInputEditTextphone,textInputEditTextpass,textInputEditTextcode;
+ EditText textInputEditTextphone,textInputEditTextpass,textInputEditTextcode;
 AppCompatButton appCompatButtonRegisterservcies;
 LinearLayout lock,code;
-
+ TextView locka,codea;
     ProgressDialog progressDialog;
     private apiinterface_home apiinterface;
    Reset reset;
@@ -35,6 +37,7 @@ LinearLayout lock,code;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         this.getWindow().setStatusBarColor(ContextCompat.getColor(this,R.color.colorPrimaryDark));
 
         setContentView(R.layout.activity_forget_password);
@@ -42,8 +45,12 @@ LinearLayout lock,code;
         calligrapher.setFont(this, "Droid.ttf", true);
         lock=findViewById(R.id.lock);
         code=findViewById(R.id.code);
+        locka=findViewById(R.id.locka);
+        codea=findViewById(R.id.codea);
         lock.setVisibility(View.GONE);
+        locka.setVisibility(View.GONE);
         code.setVisibility(View.GONE);
+        codea.setVisibility(View.GONE);
         textInputEditTextphone=findViewById(R.id.textInputEditTextphone);
         textInputEditTextcode=findViewById(R.id.textInputEditTextcode);
         textInputEditTextpass=findViewById(R.id.textInputEditTextpass);
@@ -81,6 +88,7 @@ LinearLayout lock,code;
                 if(reset.getCode()==200&&reset.isStatus()){
                     Toast.makeText(ForgetPassword.this,"وصلك بريد ألكترونى يمكنك الأن تحديد كلمة مرور جديدة",Toast.LENGTH_LONG).show();
                      code.setVisibility(View.VISIBLE);
+                     codea.setVisibility(View.VISIBLE);
                 }
                 else{
                     Toast.makeText(ForgetPassword.this,"هذه البيانات غير مسجلة",Toast.LENGTH_LONG).show();
@@ -137,6 +145,7 @@ LinearLayout lock,code;
                 if(reset.getCode()==200&&reset.isStatus()){
                     Toast.makeText(ForgetPassword.this,"كود تأكيد صحيح",Toast.LENGTH_LONG).show();
                          lock.setVisibility(View.VISIBLE);
+                    locka.setVisibility(View.VISIBLE);
                 }
                 else{
                     Toast.makeText(ForgetPassword.this,"كود تأكيد غير صحيح",Toast.LENGTH_LONG).show();
