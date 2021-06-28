@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/black"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:background="@color/colorPrimary"
+        android:id="@+id/a"
+        android:padding="10dp"
+        >
+        <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:local="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+
+
+            local:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            local:popupTheme="@style/ThemeOverlay.AppCompat.Light" >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:text="@string/terms"
+                android:layout_gravity="center"
+                android:id="@+id/toolbar_title" />
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:id="@+id/notification"
+                android:background="@drawable/notification"
+                />
+
+        </androidx.appcompat.widget.Toolbar>
+    </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="-18dp"
+            android:layout_marginBottom="50dp"
+            android:layout_below="@id/a"
+            android:layout_height="wrap_content">
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:background="@drawable/backshapeblack"
+
+    android:layout_height="wrap_content">
+
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_gravity="center"
+           android:gravity="center"
+           android:layout_marginLeft="18dp"
+           android:layout_marginRight="18dp"
+           android:id="@+id/textt"
+           android:textStyle="bold"
+           android:textSize="17dp"
+           android:textColor="@color/white"
+           android:text="@string/terms"
+
+           />
+
+</LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</FrameLayout>
