@@ -56,11 +56,12 @@ import retrofit2.Response;
 public class More_fragment extends Fragment {
 
     ImageView notification;
-    TextView logout,terms,whous,callus,language,login,bank;
+    TextView logout,terms,whous,callus,language,login,bank,noti;
     private SharedPreferences sharedpref;
     private SharedPreferences.Editor edt;
     CircleImageView image;
     TextView name ,address,phone ;
+    LinearLayout logoutLinear;
     private contact_general_ contact;
     private  static final int IMAGEUser = 99;
     Bitmap bitmapUser;
@@ -110,7 +111,8 @@ public class More_fragment extends Fragment {
         twitter=view.findViewById(R.id.twitter);
         linkedin=view.findViewById(R.id.linkedin);
         youtube=view.findViewById(R.id.youtube);
-
+        logoutLinear=view.findViewById(R.id.logoutLinear);
+        noti=view.findViewById(R.id.noti);
         sharedpref = getActivity().getSharedPreferences("Education", Context.MODE_PRIVATE);
         edt = sharedpref.edit();
 
@@ -132,8 +134,29 @@ public class More_fragment extends Fragment {
         address.setText(sharedpref.getString("address",""));
         phone.setText(sharedpref.getString("phone",""));
 
-
         logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment fragment = new profile_fragment();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.frame_container, fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
+        noti.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment fragment = new Notification_fragment();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.frame_container, fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
+        logoutLinear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 edt.putInt("id",0);

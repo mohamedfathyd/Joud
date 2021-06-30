@@ -41,7 +41,7 @@ public class SelectLanguage extends AppCompatActivity {
                 english.setBackgroundResource(R.drawable.backshapeempty);
                 arabic.setBackgroundResource(R.drawable.backshapeempty2);
                 arabicT.setTextColor(getResources().getColor(R.color.white));
-                englishT.setTextColor(getResources().getColor(R.color.orangeColor));
+                englishT.setTextColor(getResources().getColor(R.color.blue));
                  lang="ar";
             }
         });
@@ -51,7 +51,7 @@ public class SelectLanguage extends AppCompatActivity {
                 english.setBackgroundResource(R.drawable.backshapeempty2);
                 arabic.setBackgroundResource(R.drawable.backshapeempty);
                 englishT.setTextColor(getResources().getColor(R.color.white));
-                arabicT.setTextColor(getResources().getColor(R.color.orangeColor));
+                arabicT.setTextColor(getResources().getColor(R.color.blue));
                 lang="en";
             }
         });

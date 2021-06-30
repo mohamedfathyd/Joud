@@ -3,10 +3,14 @@ package com.khalej.joud.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -14,6 +18,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.khalej.joud.R;
 import com.khalej.joud.model.Apiclient_home;
 import com.khalej.joud.model.apiinterface_home;
+import com.khalej.joud.model.contact_general_;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,18 +31,28 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class CallUs extends AppCompatActivity {
-    TextInputEditText textInputEditTextname,textInputEditTextaddress,textInputEditTextphone,
+    EditText textInputEditTextname,textInputEditTextaddress,textInputEditTextphone,
             textInputEditTextmessage;
+    ImageView face,inst,twitter,linkedin,youtube;
     AppCompatButton appCompatButton;
     private apiinterface_home apiinterface;
     ProgressDialog progressDialog;
+    private contact_general_ contact;
     LinearLayout whatsone,whatstwo,whatsthree,gmail,phone;
+    private SharedPreferences sharedpref;
+    private SharedPreferences.Editor edt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_call_us);
-
-
+        sharedpref = getSharedPreferences("Education", Context.MODE_PRIVATE);
+        edt = sharedpref.edit();
+        fetchInfo_annonce();
+        face=findViewById(R.id.face);
+        inst=findViewById(R.id.inst);
+        twitter=findViewById(R.id.twitter);
+        linkedin=findViewById(R.id.linkedin);
+        youtube=findViewById(R.id.youtube);
         Toolbar toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
         Calligrapher calligrapher = new Calligrapher(this);
@@ -126,6 +141,74 @@ public class CallUs extends AppCompatActivity {
                         "mailto", "ahmedsu4000@gmail.com", null));
                 emailIntent.putExtra(Intent.EXTRA_SUBJECT, "نشكرك على التواصل معنا قم بوضع مقترحاتك ");
                 startActivity(Intent.createChooser(emailIntent, null));
+            }
+        });
+        face.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try{
+                    String url = contact.getPayload().getSocial().getFacebook();
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse(url));
+                    startActivity(i);}catch (Exception e){}
+            }
+        });
+        inst.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try{
+                    String url = contact.getPayload().getSocial().getInstagram();
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse(url));
+                    startActivity(i);}catch (Exception e){}
+            }
+        });
+        twitter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try{
+                    String url = contact.getPayload().getSocial().getTwitter();
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse(url));
+                    startActivity(i);}catch (Exception e){}
+            }
+        });
+        linkedin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try{
+                    String url = contact.getPayload().getSocial().getLinkedin();
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse(url));
+                    startActivity(i);}catch (Exception e){}
+            }
+        });
+        youtube.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try{
+                    String url = contact.getPayload().getSocial().getYoutube();
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse(url));
+                    startActivity(i);}catch (Exception e){}
+            }
+        });
+
+    }
+
+    public void fetchInfo_annonce() {
+        apiinterface = Apiclient_home.getapiClient().create(apiinterface_home.class);
+        Call<contact_general_> call = apiinterface.getcontacts_g(sharedpref.getString("language","").trim());
+        call.enqueue(new Callback<contact_general_>() {
+            @Override
+            public void onResponse(Call<contact_general_> call, Response<contact_general_> response) {
+                contact=response.body();
+
+            }
+
+            @Override
+            public void onFailure(Call<contact_general_> call, Throwable t) {
+
             }
         });
     }

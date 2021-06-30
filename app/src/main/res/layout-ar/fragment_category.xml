@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/black"
+    android:background="@color/white"
     >
     <RelativeLayout
         android:layout_width="match_parent"
@@ -22,7 +22,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="85dp"
-        android:background="@color/colorPrimary"
+        android:background="@color/white"
         android:padding="10dp"
         >
         <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
@@ -30,7 +30,7 @@
             android:id="@+id/app_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
+            android:background="@color/white"
 
 
             local:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
@@ -49,18 +49,26 @@
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:id="@+id/notification"
-                android:background="@drawable/notification"
+                android:background="@drawable/ic_notifications_active"
                 />
 
         </androidx.appcompat.widget.Toolbar>
     </LinearLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+           android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="150dp"
+                android:background="@drawable/rectangleblue"
+                android:layout_height="180dp" />
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="120dp"
+            android:layout_height="140dp"
             android:background="@drawable/shapea"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="70dp"
-            android:layout_marginLeft="70dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
             android:layout_weight="3"
             android:id="@+id/recyclerview2"
             android:orientation="horizontal"
@@ -70,27 +78,28 @@
             >
 
         </androidx.recyclerview.widget.RecyclerView>
-        <TextView
-            android:layout_width="220dp"
-            android:layout_height="50dp"
-            android:background="@drawable/corner"
-            android:layout_gravity="start"
-            android:textStyle="bold"
-            android:textSize="15dp"
-            android:textColor="@color/white"
-            android:id="@+id/textco"
-            android:text="@string/myCard"
-            android:layout_marginTop="-18dp"
-            android:gravity="center"
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginEnd="20dp"
+                android:layout_alignParentEnd="true"
+                android:textColor="@color/white"
+                android:id="@+id/textco"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="@string/myCard"
+                android:padding="5dp"
+                android:background="@drawable/circle"
+                />
+        </RelativeLayout>
 
-            />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="18dp"
             android:layout_marginRight="18dp"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="#3E4958"
             android:textSize="19dp"
             android:layout_marginTop="18dp"
             android:textStyle="bold"
@@ -107,8 +116,9 @@
                 android:layout_marginTop="10dp"
                 android:textSize="15dp"
                 android:layout_gravity="center"
+                android:scrollbars = "vertical"
                 android:gravity="center"
-                android:textColor="#ffffff"
+                android:textColor="#000000"
                 android:id="@+id/carddetails"
                 android:text="تالنتيلانيستلانيتسبلانيبستلانيبتلانيبتلانيبتالنتيبسالنتيباليبنملتايبناتلنيب"
                 />
@@ -116,32 +126,38 @@
                android:layout_width="match_parent"
                android:weightSum="10"
                android:layout_marginTop="18dp"
+               android:layout_marginLeft="60dp"
+               android:layout_marginRight="60dp"
                android:orientation="horizontal"
+               android:layoutDirection="ltr"
                android:layout_height="50dp">
-               <TextView
-                   android:layout_width="0dp"
-                   android:layout_weight="4"
-                   android:layout_height="50dp"
-                   android:background="@drawable/corner"
-                   android:layout_gravity="start"
-                   android:textStyle="bold"
-                   android:textSize="15dp"
-                   android:textColor="@color/white"
-                   android:text="@string/price"
-                   android:layout_marginTop="18dp"
-                   android:gravity="center"
 
-                   />
                <TextView
                    android:layout_width="0dp"
                    android:layout_weight="6"
                    android:layout_height="50dp"
-                   android:background="@drawable/pricecc"
-                   android:layout_gravity="start"
+                   android:background="@drawable/backshape3"
+                   android:layout_gravity="end"
                    android:textStyle="bold"
                    android:textSize="15dp"
                    android:id="@+id/price"
-                   android:textColor="#ffffff"
+
+                   android:textColor="@color/blue"
+                   android:text="@string/price"
+                   android:layout_marginTop="18dp"
+                   android:gravity="center"
+                   android:layout_marginEnd="-50dp"
+                   android:paddingEnd="50dp"
+                   />
+               <TextView
+                   android:layout_width="0dp"
+                   android:layout_weight="4"
+                   android:layout_height="50dp"
+                   android:background="@drawable/backkshape"
+                   android:layout_gravity="start"
+                   android:textStyle="bold"
+                   android:textSize="15dp"
+                   android:textColor="@color/white"
                    android:text="@string/price"
                    android:layout_marginTop="18dp"
                    android:gravity="center"
@@ -155,7 +171,7 @@
             android:layout_height="45dp"
           android:layout_gravity="center"
             android:gravity="center"
-            android:background="@drawable/backkshape"
+            android:background="@drawable/backshape2"
             android:text="طلب الكارت"
             android:textColor="#ffffff"
             android:layout_marginTop="40dp"
@@ -166,9 +182,9 @@
             android:layout_height="45dp"
             android:layout_gravity="center"
             android:gravity="center"
-            android:background="@drawable/backgroundstyle"
+            android:background="@drawable/backshapeemptyblue"
             android:text="طلب والدفع ألكترونياً"
-            android:textColor="#000000"
+            android:textColor="@color/blue"
             android:layout_marginTop="18dp"
             android:textStyle="bold"  />
     </LinearLayout>

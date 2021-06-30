@@ -69,7 +69,7 @@ public class edit_fragment extends Fragment {
     ImageView notification;
     TextView logout,terms,whous,callus,language,login,bank;
     Intent intent;
-    TextInputEditText name,phone,password;
+    EditText name,phone,password;
     AppCompatButton appCompatButtonRegister;
     private  static final int IMAGEUser = 100;
     Bitmap bitmapUser;

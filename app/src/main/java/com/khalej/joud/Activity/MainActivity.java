@@ -37,10 +37,12 @@ public class MainActivity extends AppCompatActivity {
     int x=0;
     Fragment fragment;
     private apiinterface_home apiinterface;
-
+    ImageView mainImage,companyImage,profileImage,moreImage;
+    TextView mainText,companyText,profileText,moreText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         setContentView(R.layout.activity_main);
 
     sharedpref = getSharedPreferences("Education",Context.MODE_PRIVATE);
@@ -68,7 +70,15 @@ public class MainActivity extends AppCompatActivity {
     myorders=findViewById(R.id.myorders);
     notification=findViewById(R.id.notification);
     more=findViewById(R.id.more);
-
+    mainImage=findViewById(R.id.homeImage);
+        mainText=findViewById(R.id.homeText);
+        companyImage=findViewById(R.id.companyImage);
+        companyText=findViewById(R.id.companyText);
+        profileImage=findViewById(R.id.profileImage);
+        profileText=findViewById(R.id.profileText);
+        moreImage=findViewById(R.id.moreImage);
+        moreText=findViewById(R.id.moreText);
+        setStartStyle();
     Fragment fragment = new Main_fragment();
     Bundle bundle2 = new Bundle();
         bundle2.putInt("id",intent.getIntExtra("id",0));
@@ -79,6 +89,16 @@ public class MainActivity extends AppCompatActivity {
         main.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
+            setStaticStyle();
+            final float scale = getResources().getDisplayMetrics().density;
+            int dpWidthInPx  = (int) (50 * scale);
+            int dpHeightInPx = (int) (50 * scale);
+            LinearLayout.LayoutParams parms = new LinearLayout.LayoutParams(dpWidthInPx,dpHeightInPx);
+            mainImage.setPadding(22,22,22,22);
+            mainImage.setLayoutParams(parms);
+            mainImage.setBackgroundResource(R.drawable.backactive);
+            mainImage.setImageResource(R.drawable.ic_home_white);
+            mainText.setVisibility(View.VISIBLE);
             Fragment fragment;
             fragment = new Main_fragment();
             Bundle bundle2 = new Bundle();
@@ -92,6 +112,16 @@ public class MainActivity extends AppCompatActivity {
         myorders.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
+            setStaticStyle();
+            final float scale = getResources().getDisplayMetrics().density;
+            int dpWidthInPx  = (int) (50 * scale);
+            int dpHeightInPx = (int) (50 * scale);
+            LinearLayout.LayoutParams parms = new LinearLayout.LayoutParams(dpWidthInPx,dpHeightInPx);
+            companyImage.setPadding(22,22,22,22);
+            companyImage.setLayoutParams(parms);
+            companyImage.setBackgroundResource(R.drawable.backactive);
+            companyImage.setImageResource(R.drawable.ic_companies_white);
+            companyText.setVisibility(View.VISIBLE);
             Fragment fragment;
             fragment = new company_fragment();
 
@@ -105,6 +135,16 @@ public class MainActivity extends AppCompatActivity {
         notification.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
+            setStaticStyle();
+            final float scale = getResources().getDisplayMetrics().density;
+            int dpWidthInPx  = (int) (50 * scale);
+            int dpHeightInPx = (int) (50 * scale);
+            LinearLayout.LayoutParams parms = new LinearLayout.LayoutParams(dpWidthInPx,dpHeightInPx);
+            profileImage.setPadding(22,22,22,22);
+            profileImage.setLayoutParams(parms);
+            profileImage.setBackgroundResource(R.drawable.backactive);
+            profileImage.setImageResource(R.drawable.ic_profile_white);
+            profileText.setVisibility(View.VISIBLE);
             Fragment fragment;
             fragment = new profile_fragment();
             loadFragment(fragment);
@@ -115,6 +155,16 @@ public class MainActivity extends AppCompatActivity {
         more.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
+            setStaticStyle();
+            final float scale = getResources().getDisplayMetrics().density;
+            int dpWidthInPx  = (int) (50 * scale);
+            int dpHeightInPx = (int) (50 * scale);
+            LinearLayout.LayoutParams parms = new LinearLayout.LayoutParams(dpWidthInPx,dpHeightInPx);
+            moreImage.setPadding(22,22,22,22);
+            moreImage.setLayoutParams(parms);
+            moreImage.setBackgroundResource(R.drawable.backactive);
+            moreImage.setImageResource(R.drawable.ic_menu_active);
+            moreText.setVisibility(View.VISIBLE);
             Fragment fragment;
             fragment = new More_fragment();
             loadFragment(fragment);
@@ -147,5 +197,42 @@ public class MainActivity extends AppCompatActivity {
             x=0;
         }
     }
-
+   public void setStaticStyle(){
+        mainText.setVisibility(View.GONE);
+        moreText.setVisibility(View.GONE);
+        companyText.setVisibility(View.GONE);
+        profileText.setVisibility(View.GONE);
+        mainImage.setBackgroundResource(0);
+       companyImage.setBackgroundResource(0);
+       profileImage.setBackgroundResource(0);
+       moreImage.setBackgroundResource(0);
+       mainImage.setImageResource(R.drawable.ic_home_inactive);
+       companyImage.setImageResource(R.drawable.ic_companies_inactive);
+       profileImage.setImageResource(R.drawable.ic_profile_inactive);
+       moreImage.setImageResource(R.drawable.ic_menu);
+       final float scale = getResources().getDisplayMetrics().density;
+       int dpWidthInPx  = (int) (30 * scale);
+       int dpHeightInPx = (int) (30 * scale);
+        LinearLayout.LayoutParams parms = new LinearLayout.LayoutParams(dpWidthInPx,dpHeightInPx);
+        mainImage.setPadding(0,0,0,0);
+        mainImage.setLayoutParams(parms);
+       companyImage.setPadding(0,0,0,0);
+       companyImage.setLayoutParams(parms);
+       profileImage.setPadding(0,0,0,0);
+       profileImage.setLayoutParams(parms);
+       moreImage.setPadding(0,0,0,0);
+       moreImage.setLayoutParams(parms);
+    }
+    public void  setStartStyle(){
+        setStaticStyle();
+        final float scale = getResources().getDisplayMetrics().density;
+        int dpWidthInPx  = (int) (50 * scale);
+        int dpHeightInPx = (int) (50 * scale);
+        LinearLayout.LayoutParams parms = new LinearLayout.LayoutParams(dpWidthInPx,dpHeightInPx);
+        mainImage.setPadding(22,22,22,22);
+        mainImage.setLayoutParams(parms);
+        mainImage.setBackgroundResource(R.drawable.backactive);
+        mainImage.setImageResource(R.drawable.ic_home_white);
+        mainText.setVisibility(View.VISIBLE);
+    }
 }

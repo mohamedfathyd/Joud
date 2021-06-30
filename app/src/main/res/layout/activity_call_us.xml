@@ -5,8 +5,7 @@
     android:id="@+id/nestedScrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layoutDirection="ltr"
-    android:background="@color/black"
+    android:background="@color/white"
 
 
     >
@@ -15,8 +14,8 @@
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-
+        android:background="@color/white"
+        android:layoutDirection="ltr"
         local:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         local:popupTheme="@style/ThemeOverlay.AppCompat.Light" >
 
@@ -43,12 +42,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:id="@+id/back"
+                android:visibility="gone"
                 android:background="@drawable/callus"
                 />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:layout_marginTop="10dp"
                 android:layout_below="@id/back"
                 android:id="@+id/a"
                 >
@@ -71,7 +72,7 @@
                         android:layout_gravity="center_vertical"
                         android:layout_marginRight="10dp"
                         android:text="ahmedsu4000@gmail.com"
-                        android:textColor="#ffffff"
+                        android:textColor="@color/blue"
                         android:textSize="18dp"
                         android:textStyle="bold"
                         />
@@ -95,7 +96,7 @@
                         android:layout_gravity="center_vertical"
                         android:layout_marginRight="10dp"
                         android:text="+966920033169"
-                        android:textColor="#ffffff"
+                        android:textColor="@color/blue"
                         android:textSize="18dp"
                         android:textStyle="bold"
                         />
@@ -105,6 +106,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:id="@+id/whatsone"
+                    android:visibility="gone"
                     android:layout_marginTop="8dp"
                     >
                     <ImageView
@@ -119,7 +121,7 @@
                         android:layout_gravity="center_vertical"
                         android:layout_marginRight="10dp"
                         android:text="+201030496669"
-                        android:textColor="#ffffff"
+                        android:textColor="@color/blue"
                         android:textSize="18dp"
                         android:textStyle="bold"
                         />
@@ -143,7 +145,7 @@
                         android:layout_gravity="center_vertical"
                         android:layout_marginRight="10dp"
                         android:text="+9660548254000"
-                        android:textColor="#ffffff"
+                        android:textColor="@color/blue"
                         android:textSize="18dp"
                         android:textStyle="bold"
                         />
@@ -152,6 +154,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
+                    android:visibility="gone"
                     android:id="@+id/whatsthree"
                     android:layout_marginTop="8dp"
                     >
@@ -167,7 +170,7 @@
                         android:layout_gravity="center_vertical"
                         android:layout_marginRight="10dp"
                         android:text="+9660500205354"
-                        android:textColor="#ffffff"
+                        android:textColor="@color/blue"
                         android:textSize="18dp"
                         android:textStyle="bold"
                         />
@@ -182,30 +185,53 @@
 
 
                 android:orientation="vertical">
+                <TextView
+                    android:id="@+id/ccc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/a"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginRight="25dp"
+                    android:orientation="horizontal"
+                    android:text="@string/address"
+                    android:textColor="#3E4958"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
 
-
-                <com.google.android.material.textfield.TextInputLayout
+                <LinearLayout
                     android:id="@+id/textInputLayoutName"
-                    android:background="@drawable/backshapeempty"
+                    android:background="@drawable/backshapeemptyblue"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="15dp"
                     android:layout_marginLeft="15dp"
 
-                    android:layout_marginTop="20dp">
+                    android:layout_marginTop="10dp">
 
-                    <com.google.android.material.textfield.TextInputEditText
+                    <EditText
                         android:id="@+id/textInputEditTextName"
                         android:layout_width="match_parent"
                         android:layout_height="30dp"
-                        android:hint="@string/hint_name"
                         android:inputType="text"
                         android:background="@null"
                         android:maxLines="1"
-                        android:textColor="@color/white" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
+                        android:textColor="@color/black" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/cc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/a"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="25dp"
+                    android:orientation="horizontal"
+                    android:text="@string/hint_name"
+                    android:textColor="#3E4958"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+                <LinearLayout
                     android:id="@+id/textInputLayoutaddress"
                     android:layout_width="match_parent"
                     android:layout_marginRight="15dp"
@@ -213,10 +239,10 @@
 
 
                     android:layout_height="wrap_content"
-                    android:background="@drawable/backshapeempty"
-                    android:layout_marginTop="5dp">
+                    android:background="@drawable/backshapeemptyblue"
+                    android:layout_marginTop="10dp">
 
-                    <com.google.android.material.textfield.TextInputEditText
+                    <EditText
                         android:id="@+id/textInputEditTextaddress"
                         android:layout_width="match_parent"
                         android:layout_height="30dp"
@@ -225,7 +251,7 @@
                         android:inputType="text"
                         android:maxLines="1"
                         android:textColor="@color/white" />
-                </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -258,26 +284,38 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
                 </LinearLayout>
-
+                <TextView
+                    android:id="@+id/c"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/a"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="25dp"
+                    android:orientation="horizontal"
+                    android:text="@string/hint_name"
+                    android:textColor="#3E4958"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="15dp"
                     android:layout_marginLeft="15dp"
 
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="10dp"
                     android:weightSum="4"
                     >
 
-                    <com.google.android.material.textfield.TextInputLayout
+                    <LinearLayout
                         android:id="@+id/textInputLayoutmessage"
-                        android:background="@drawable/backshapeempty"
+                        android:background="@drawable/backshapeemptyblue"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="4"
                         >
 
-                        <com.google.android.material.textfield.TextInputEditText
+                        <EditText
                             android:id="@+id/textInputEditTextmessage"
                             android:layout_width="match_parent"
                             android:background="@null"
@@ -287,24 +325,80 @@
                             android:inputType="text"
                             android:maxLines="1"
                             android:textColor="@color/white" />
-                    </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
 
                 </LinearLayout>
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/appCompatButtonRegister"
-                    android:background="@drawable/backkshape"
-                    android:layout_width="280dp"
+                    android:background="@drawable/backshape2"
+                    android:layout_width="match_parent"
                     android:layout_gravity="center"
-                    android:layout_height="40dp"
+                    android:layout_height="50dp"
                     android:layout_marginTop="30dp"
                     android:textAllCaps="false"
-
-                    android:textColor="#ffffff"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:textColor="@color/white"
                     android:text="@string/send" />
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginLeft="50dp"
+                    android:weightSum="5"
+                    >
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/facebook"
+                        android:id="@+id/face"
+                        />
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:layout_margin="10dp"
 
+                        android:background="@drawable/inst"
+                        android:id="@+id/inst"
+                        />
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:layout_margin="10dp"
+
+                        android:background="@drawable/twitter"
+                        android:id="@+id/twitter"
+                        />
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="10dp"
+
+                        android:layout_weight="1"
+                        android:background="@drawable/linkedin"
+                        android:id="@+id/linkedin"
+                        />
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="10dp"
+
+                        android:layout_weight="1"
+                        android:background="@drawable/youtube"
+                        android:id="@+id/youtube"
+                        />
+                </LinearLayout>
             </androidx.appcompat.widget.LinearLayoutCompat>
+
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>

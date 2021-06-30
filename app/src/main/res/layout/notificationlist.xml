@@ -7,7 +7,7 @@
     android:layoutDirection="rtl"
 
     android:layout_margin="5dp"
-    android:background="@drawable/backshapeempty"
+    android:background="@color/transparent"
 
     >
 
@@ -15,6 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
+        android:id="@+id/card"
         android:layout_centerVertical="true"
         app:cardCornerRadius="8dp"
         app:cardBackgroundColor="@color/transparent"
@@ -36,14 +37,13 @@
                 android:padding="4dp"
                 android:background="@drawable/backshapeempty"
                 android:orientation="horizontal" />
-<com.khalej.joud.RoundRectCornerImageView
+<ImageView
     android:layout_width="50dp"
     android:layout_height="50dp"
     android:id="@+id/image"
-    android:background="@drawable/shapewhite"
-    android:src="@drawable/notification"
-    android:scaleType="fitXY"
-    />
+    android:layout_gravity="center"
+    android:background="@drawable/ic_notifications"
+     />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -70,7 +70,7 @@
 
                         android:layout_marginBottom="5dp"
                         android:text="fish name"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="15dp"
                         android:textStyle="bold" />
                     <TextView
@@ -81,7 +81,7 @@
 
                         android:layout_marginBottom="5dp"
                         android:text="fish name"
-                        android:textColor="#ffffff"
+                        android:textColor="@color/blue"
                         android:visibility="gone"
                         android:textSize="13dp"
                         android:textStyle="bold" />
@@ -130,4 +130,10 @@
 
 
     </androidx.cardview.widget.CardView>
+    <view
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/card"
+        android:background="#f0f0f0"></view>
 </RelativeLayout>

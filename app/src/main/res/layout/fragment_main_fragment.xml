@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/black"
     >
     <RelativeLayout
         android:layout_width="match_parent"
@@ -22,7 +22,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="110dp"
-        android:background="@color/colorPrimary"
+        android:background="@color/white"
         android:padding="10dp"
         >
         <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
@@ -30,7 +30,7 @@
             android:id="@+id/app_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
+            android:background="@color/white"
 
 
             local:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
@@ -49,17 +49,17 @@
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:id="@+id/notification"
-                android:background="@drawable/notification"
+                android:background="@drawable/ic_notifications_active"
                 />
 
         </androidx.appcompat.widget.Toolbar>
     </LinearLayout>
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="170dp"
             android:background="@drawable/shapea"
-            android:layout_marginLeft="18dp"
-            android:layout_marginRight="18dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:layout_marginTop="-30dp"
             android:layout_weight="3"
             android:id="@+id/recyclerview2"
