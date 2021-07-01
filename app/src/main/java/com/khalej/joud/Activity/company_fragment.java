@@ -83,7 +83,7 @@ public class company_fragment extends Fragment {
         });
        StaggeredGridLayoutManager staggeredGridLayoutManager =
                 new StaggeredGridLayoutManager(
-                        3, //The number of Columns in the grid
+                        1, //The number of Columns in the grid
                         LinearLayoutManager.VERTICAL);
         recyclerView3.setLayoutManager(staggeredGridLayoutManager);
         recyclerView3.setHasFixedSize(true);

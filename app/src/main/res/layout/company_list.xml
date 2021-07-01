@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     card_view:cardPreventCornerOverlap="false"
-    android:layout_margin="5dp"
+
     card_view:cardBackgroundColor="#00000000"
     android:orientation="horizontal">
     <RelativeLayout
@@ -16,41 +16,62 @@
         >
 
       <RelativeLayout
-          android:layout_width="130dp"
-          android:layout_height="170dp">
+          android:layout_width="match_parent"
+          android:layout_height="200dp">
 <RelativeLayout
     android:layout_width="match_parent"
-    android:layout_height="115dp"
+    android:layout_height="200dp"
     android:padding="2dp"
-    android:background="@drawable/backshapeempty"
 
     >
-
+    <ImageView
+        android:layout_width="130dp"
+        android:layout_centerVertical="true"
+        android:id="@+id/rec"
+        android:background="@drawable/rectangleblueen"
+        android:layout_height="190dp" />
 
 </RelativeLayout>
-<de.hdodenhof.circleimageview.CircleImageView
-    android:layout_width="match_parent"
-    android:layout_height="115dp"
-    android:layout_gravity="center"
-    android:layout_margin="-3dp"
-    app:civ_circle_background_color="#ffffff"
-    app:civ_border_width="3dp"
-    android:id="@+id/image"
-    />
 
-          <TextView
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:textColor="@color/white"
-              android:textSize="13.5dp"
-              android:textStyle="bold"
-              android:text="الكارت الذهبي"
-              android:id="@+id/name"
-              android:layout_marginTop="5dp"
+          <RelativeLayout
+              android:layout_width="250dp"
               android:gravity="center"
-              android:layout_centerHorizontal="true"
-              android:layout_below="@+id/image"
-              />
+              android:layout_centerInParent="true"
+              android:background="@drawable/backshape3"
+              android:layout_height="145dp">
+              <RelativeLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="95dp"
+                  android:layout_marginTop="30dp"
+
+
+                  >
+
+
+              </RelativeLayout>
+              <com.makeramen.roundedimageview.RoundedImageView
+                  android:id="@+id/image"
+                  android:layout_width="match_parent"
+                  android:layout_height="85dp"
+                  android:scaleType="fitXY"
+                  android:layout_marginLeft="20dp"
+                  android:layout_marginTop="10dp"
+                  android:layout_marginRight="20dp" />
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:textColor="@color/blue"
+                  android:textSize="14dp"
+                  android:textStyle="bold"
+                  android:fontFamily="@font/taj"
+                  android:text="الكارت الذهبي"
+                  android:id="@+id/name"
+                  android:layout_margin="8dp"
+                  android:gravity="center"
+                  android:layout_centerHorizontal="true"
+                  android:layout_below="@+id/image"
+                  />
+          </RelativeLayout>
       </RelativeLayout>
 
     </RelativeLayout>

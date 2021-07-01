@@ -41,7 +41,15 @@ public class RecyclerAdapter_companys extends RecyclerView.Adapter<RecyclerAdapt
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.company_list,parent,false);
+        View view=null;
+        sharedpref = context.getSharedPreferences("Education", Context.MODE_PRIVATE);
+        edt = sharedpref.edit();
+        if(sharedpref.getString("language","").trim().equals("ar")){
+            view=  LayoutInflater.from(parent.getContext()).inflate(R.layout.company_list_ar,parent,false); }
+        else{
+            view=  LayoutInflater.from(parent.getContext()).inflate(R.layout.company_list,parent,false);
+
+        }
 
         return new MyViewHolder(view);
     }
@@ -52,10 +60,14 @@ public class RecyclerAdapter_companys extends RecyclerView.Adapter<RecyclerAdapt
             edt = sharedpref.edit();
             if(sharedpref.getString("language","").trim().equals("ar")){
                 holder.name.setText(contactslist.get(position).getAr_name());
-
+              if(position%2!=0){
+                  holder.rec.setBackgroundResource(R.drawable.rectangleorange);
+              }
             }else{
                 holder.name.setText(contactslist.get(position).getEn_name());
-
+                if(position%2!=0){
+                    holder.rec.setBackgroundResource(R.drawable.rectangleorangeen);
+                }
             }
 
             Glide.with(context).load(""+contactslist.get(position).getMedia_links()[0]).thumbnail(0.5f)
@@ -93,13 +105,14 @@ public class RecyclerAdapter_companys extends RecyclerView.Adapter<RecyclerAdapt
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
-        ImageView image;
+        ImageView image,rec;
         TextView name;
 
         public MyViewHolder(View itemView) {
             super(itemView);
 
             image=(ImageView)itemView.findViewById(R.id.image);
+            rec=itemView.findViewById(R.id.rec);
             name=itemView.findViewById(R.id.name);
 
         }

@@ -4,144 +4,174 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/black"
+    android:background="@color/white"
     >
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="50dp"
         >
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:background="@color/colorPrimary"
-        android:padding="10dp"
-        >
-        <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:local="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/app_bar"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
-
-
-            local:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            local:popupTheme="@style/ThemeOverlay.AppCompat.Light" >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="17dp"
-                android:textStyle="bold"
-                android:textColor="#000000"
-                android:text="@string/main"
-                android:layout_gravity="center"
-                android:id="@+id/toolbar_title" />
-
-            <ImageView
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:id="@+id/notification"
-                android:background="@drawable/notification"
-                />
-
-        </androidx.appcompat.widget.Toolbar>
-    </LinearLayout>
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:background="@drawable/shapea"
-            android:layout_marginLeft="17dp"
-            android:layout_marginRight="17dp"
-            android:layout_marginTop="17dp"
-            android:layout_weight="3"
-            android:id="@+id/recyclerview2"
-            android:orientation="horizontal"
-            android:layout_gravity="center"
-            app:reverseLayout="true"
-            android:padding="1dp"
-            >
-
-        </androidx.recyclerview.widget.RecyclerView>
-        <TextView
-            android:layout_width="180dp"
-            android:layout_height="50dp"
-            android:background="@drawable/corner"
-            android:layout_gravity="start"
-            android:textStyle="bold"
-            android:textSize="15dp"
-            android:textColor="@color/white"
-            android:id="@+id/textco"
-            android:text="@string/description"
-            android:layout_marginTop="17dp"
-            android:gravity="center"
-
-            />
-        <TextView
+            android:layout_height="match_parent">
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:layout_weight="5"
-                android:textStyle="normal"
-                android:layout_marginTop="10dp"
-                android:textSize="15dp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                android:id="@+id/carddetails"
-                android:text="تالنتيلانيستلانيتسبلانيبستلانيبتلانيبتلانيبتالنتيبسالنتيباليبنملتايبناتلنيب"
-                />
-           <LinearLayout
-               android:layout_width="match_parent"
-               android:weightSum="10"
-               android:layout_marginTop="17dp"
-               android:orientation="horizontal"
-               android:layout_height="50dp">
-               <TextView
-                   android:layout_width="0dp"
-                   android:layout_weight="4.5"
-                   android:layout_height="50dp"
-                   android:background="@drawable/corner"
-                   android:layout_gravity="start"
-                   android:textStyle="bold"
-                   android:textSize="15dp"
-                   android:textColor="@color/white"
-                   android:text="@string/contact"
-                   android:layout_marginTop="17dp"
-                   android:gravity="center"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:background="@color/white"
+                    android:padding="10dp"
+                    >
+                    <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:local="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/app_bar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
 
-                   />
-           </LinearLayout>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#ffffff"
-            android:textSize="18dp"
-            android:layout_marginTop="10dp"
-            android:id="@+id/address"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:gravity="center"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#ffffff"
-            android:textSize="18dp"
-            android:layout_marginTop="10dp"
-            android:id="@+id/phone"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:gravity="center"
-            />
 
-    </LinearLayout>
-    </ScrollView>
+                        local:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                        local:popupTheme="@style/ThemeOverlay.AppCompat.Light" >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="17dp"
+                            android:textStyle="bold"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/taj"
+                            android:text="@string/main"
+                            android:layout_gravity="center"
+                            android:id="@+id/toolbar_title" />
+
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:id="@+id/notification"
+                            android:background="@drawable/ic_notifications_active"
+                            />
+
+                    </androidx.appcompat.widget.Toolbar>
+                </LinearLayout>
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:layout_width="130dp"
+                        android:background="@drawable/rectangleblue"
+                        android:layout_height="180dp" />
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp"
+                        android:background="@drawable/shapea"
+                        android:layout_marginRight="40dp"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_weight="3"
+                        android:id="@+id/recyclerview2"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center"
+                        app:reverseLayout="true"
+                        android:padding="1dp"
+                        >
+
+                    </androidx.recyclerview.widget.RecyclerView>
+                </RelativeLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:background="@drawable/under"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="10dp"
+                    android:textStyle="bold"
+                    android:textSize="15dp"
+                    android:fontFamily="@font/taj"
+                    android:textColor="@color/black"
+                    android:id="@+id/textco"
+                    android:text="@string/description"
+                    android:layout_marginTop="17dp"
+                    android:gravity="center"
+
+                    />
+                <ScrollView
+                    android:id="@+id/SCROLLER_ID"
+                    android:layout_width="fill_parent"
+                    android:layout_height="150dp"
+                    android:scrollbars="vertical"
+                    android:fillViewport="true">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:textStyle="normal"
+                    android:fontFamily="@font/taj"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:textSize="14dp"
+                    android:layout_gravity="center"
+                    android:gravity="start"
+                    android:textColor="@color/blue"
+                    android:id="@+id/carddetails"
+                    android:text="تالنتيلانيستلانيتسبلانيبستلانيبتلانيبتلانيبتالنتيبسالنتيباليبنملتايبناتلنيب"
+                    />
+                </ScrollView>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:weightSum="10"
+                    android:layout_marginTop="17dp"
+                    android:layout_marginStart="10dp"
+                    android:orientation="horizontal"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_weight="4.5"
+                        android:layout_height="50dp"
+                        android:background="@drawable/under"
+                        android:layout_gravity="start"
+                        android:textStyle="bold"
+                        android:textSize="15dp"
+                        android:fontFamily="@font/taj"
+                        android:textColor="@color/black"
+                        android:text="@string/contact"
+                        android:layout_marginTop="17dp"
+                        android:gravity="center"
+
+                        />
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blue"
+                    android:textSize="18dp"
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/address"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/taj"
+                    android:textStyle="bold"
+                    android:layout_gravity="start"
+                    android:drawableStart="@drawable/ic_location_on_black_24dp"
+                    android:gravity="center"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blue"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/taj"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/phone"
+                    android:textStyle="bold"
+                    android:drawableStart="@drawable/ic_phone_ringing_1"
+                    android:layout_gravity="start"
+                    android:gravity="center"
+                    />
+
+            </LinearLayout>
+        </ScrollView>
     </RelativeLayout>
 </FrameLayout>

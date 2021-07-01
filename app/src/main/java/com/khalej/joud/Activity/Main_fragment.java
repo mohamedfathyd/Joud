@@ -24,6 +24,9 @@ import com.khalej.joud.model.contact_category;
 import com.khalej.joud.model.contact_general;
 import com.khalej.joud.model.contact_general_category;
 import com.khalej.joud.model.contact_slider;
+import com.mig35.carousellayoutmanager.CarouselLayoutManager;
+import com.mig35.carousellayoutmanager.CarouselZoomPostLayoutListener;
+import com.mig35.carousellayoutmanager.CenterScrollListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -88,12 +91,7 @@ public class Main_fragment extends Fragment {
                 fragmentTransaction.commit();
             }
         });
-       StaggeredGridLayoutManager staggeredGridLayoutManager =
-                new StaggeredGridLayoutManager(
-                        2, //The number of Columns in the grid
-                        LinearLayoutManager.VERTICAL);
-        recyclerView3.setLayoutManager(staggeredGridLayoutManager);
-        recyclerView3.setHasFixedSize(true);
+
         fetchInfo_annonce();
 
         try {
@@ -161,6 +159,11 @@ public class Main_fragment extends Fragment {
                     contact_category=contactList.getPayload();
                     if (contact_category.size() != 0 || !(contact_category.isEmpty())) {
                        recyclerAdapter_first_annonce= new RecyclerAdapter_first_annonce(getActivity(), contact_category);
+                        final CarouselLayoutManager layoutManager2 = new CarouselLayoutManager(CarouselLayoutManager.VERTICAL);
+                        layoutManager2.setPostLayoutListener(new CarouselZoomPostLayoutListener());
+                        recyclerView3.setLayoutManager(layoutManager2);
+                        recyclerView3.setHasFixedSize(true);
+                        recyclerView3.addOnScrollListener(new CenterScrollListener());
                         recyclerView3.setAdapter(recyclerAdapter_first_annonce);
                        }
 

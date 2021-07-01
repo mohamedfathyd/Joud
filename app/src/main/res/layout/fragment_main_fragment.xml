@@ -42,6 +42,7 @@
                 android:textStyle="bold"
                 android:textColor="#000000"
                 android:text="@string/main"
+                android:fontFamily="@font/taj"
                 android:layout_gravity="center"
                 android:id="@+id/toolbar_title" />
 
@@ -72,9 +73,9 @@
         </androidx.recyclerview.widget.RecyclerView>
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="280dp"
             android:background="@color/transparent"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="60dp"
             android:layout_marginRight="5dp"
             android:layout_marginLeft="5dp"
             android:layout_weight="3"

@@ -41,7 +41,7 @@ public class RecyclerAdapter_first_annonce extends RecyclerView.Adapter<Recycler
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.category_list,parent,false);
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.category_main_list,parent,false);
 
         return new MyViewHolder(view);
     }

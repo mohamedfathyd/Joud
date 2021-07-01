@@ -41,6 +41,7 @@
                             android:textSize="18dp"
                             android:textStyle="bold"
                             android:textColor="#000000"
+                            android:fontFamily="@font/taj"
                             android:text="@string/profile"
                             android:layout_gravity="center"
                             android:id="@+id/toolbar_title" />
@@ -139,6 +140,7 @@
                     android:layout_gravity="start"
                     android:textStyle="bold"
                     android:textSize="16dp"
+                    android:fontFamily="@font/taj"
                     android:textColor="@color/white"
                     android:text="@string/myCard"
                     android:layout_marginTop="18dp"
@@ -171,6 +173,7 @@
                     android:text="@string/editProfile"
                     android:textColor="#ffffff"
                     android:layout_marginTop="90dp"
+                    android:fontFamily="@font/taj"
                     android:textStyle="bold" />
             </LinearLayout>
         </ScrollView>

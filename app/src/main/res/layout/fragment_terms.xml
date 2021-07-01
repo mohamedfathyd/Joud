@@ -36,6 +36,7 @@
                 android:textStyle="bold"
                 android:gravity="center"
                 android:textColor="#000000"
+                android:fontFamily="@font/taj"
                 android:text="@string/terms"
                 android:layout_gravity="center"
                 android:id="@+id/toolbar_title" />
@@ -68,6 +69,7 @@
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
            android:layout_gravity="center"
+           android:fontFamily="@font/taj"
            android:gravity="center"
            android:layout_marginLeft="18dp"
            android:layout_marginRight="18dp"

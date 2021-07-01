@@ -17,7 +17,7 @@ import com.khalej.joud.R;
 public class SelectLanguage extends AppCompatActivity {
    Button button_next;
    LinearLayout arabic,english;
-   String lang;
+   String lang="ar";
     private SharedPreferences sharedpref;
     private SharedPreferences.Editor edt;
    TextView arabicT,englishT;

@@ -194,7 +194,7 @@
                     android:layout_marginTop="30dp"
                     android:layout_marginRight="25dp"
                     android:orientation="horizontal"
-                    android:text="@string/address"
+                    android:text="@string/name"
                     android:textColor="#3E4958"
                     android:textSize="15dp"
                     android:textStyle="bold" />
@@ -227,7 +227,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="25dp"
                     android:orientation="horizontal"
-                    android:text="@string/hint_name"
+                    android:text="@string/address"
                     android:textColor="#3E4958"
                     android:textSize="15dp"
                     android:textStyle="bold" />
@@ -246,7 +246,6 @@
                         android:id="@+id/textInputEditTextaddress"
                         android:layout_width="match_parent"
                         android:layout_height="30dp"
-                        android:hint="@string/address"
                         android:background="@null"
                         android:inputType="text"
                         android:maxLines="1"
@@ -293,7 +292,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="25dp"
                     android:orientation="horizontal"
-                    android:text="@string/hint_name"
+                    android:text="@string/message"
                     android:textColor="#3E4958"
                     android:textSize="15dp"
                     android:textStyle="bold" />
@@ -320,7 +319,6 @@
                             android:layout_width="match_parent"
                             android:background="@null"
                             android:layout_height="80dp"
-                            android:hint="@string/message"
                             android:gravity="start"
                             android:inputType="text"
                             android:maxLines="1"

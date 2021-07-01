@@ -38,9 +38,10 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="18dp"
+                            android:textSize="16dp"
                             android:textStyle="bold"
                             android:textColor="#000000"
+                            android:fontFamily="@font/taj"
                             android:text="@string/more"
                             android:layout_gravity="center"
                             android:id="@+id/toolbar_title" />
@@ -57,18 +58,18 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:background="@color/white"
-                    android:layout_marginTop="-18dp"
+                    android:layout_marginTop="-16dp"
                     android:layout_height="match_parent">
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_marginTop="18dp"
+                        android:layout_marginTop="16dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/linear"
-                            android:paddingBottom="18dp"
+                            android:paddingBottom="16dp"
                             android:orientation="horizontal"
                             >
                             <RelativeLayout
@@ -86,9 +87,9 @@
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginRight="18dp"
+                                android:layout_marginRight="16dp"
                                 android:layout_marginTop="5dp"
-                                android:layout_marginLeft="18dp"
+                                android:layout_marginLeft="16dp"
 
                                 android:orientation="vertical"
                                 >
@@ -149,10 +150,11 @@
                         android:layout_weight="6.6"
                         android:paddingStart="15dp"
                         android:layout_gravity="center"
+                        android:fontFamily="@font/taj"
                         android:text="@string/main"
                         android:textColor="@color/black"
                         android:id="@+id/bank"
-                        android:textSize="18dp"
+                        android:textSize="16dp"
                         android:layout_height="wrap_content" />
                     <ImageView
                         android:layout_width="0dp"
@@ -188,8 +190,9 @@
                         android:layout_gravity="center"
                         android:text="@string/profile"
                         android:textColor="@color/black"
+                        android:fontFamily="@font/taj"
                         android:id="@+id/logout"
-                        android:textSize="18dp"
+                        android:textSize="16dp"
                         android:layout_height="wrap_content" />
                     <ImageView
                         android:layout_width="1dp"
@@ -225,8 +228,9 @@
                         android:layout_gravity="center"
                         android:text="@string/notification"
                         android:textColor="@color/black"
+                        android:fontFamily="@font/taj"
                         android:id="@+id/noti"
-                        android:textSize="18dp"
+                        android:textSize="16dp"
                         android:layout_height="wrap_content" />
                     <ImageView
                         android:layout_width="1dp"
@@ -262,7 +266,8 @@
                         android:text="@string/whous"
                         android:textColor="@color/black"
                         android:id="@+id/whous"
-                        android:textSize="18dp"
+                        android:fontFamily="@font/taj"
+                        android:textSize="16dp"
                         android:layout_height="wrap_content" />
                     <ImageView
                         android:layout_width="0dp"
@@ -299,7 +304,8 @@
                         android:text="@string/callus"
                         android:id="@+id/callus"
                         android:textColor="@color/black"
-                        android:textSize="18dp"
+                        android:fontFamily="@font/taj"
+                        android:textSize="16dp"
                         android:layout_height="wrap_content" />
                     <ImageView
                         android:layout_width="0dp"
@@ -334,7 +340,8 @@
                         android:text="@string/terms"
                         android:textColor="@color/black"
                         android:id="@+id/terms"
-                        android:textSize="18dp"
+                        android:fontFamily="@font/taj"
+                        android:textSize="16dp"
                         android:layout_height="wrap_content" />
                     <ImageView
                         android:layout_width="0dp"
@@ -372,8 +379,9 @@
                         android:text="English"
                         android:gravity="right"
                         android:id="@+id/language"
+                        android:fontFamily="@font/taj"
                         android:textColor="@color/black"
-                        android:textSize="18dp"
+                        android:textSize="16dp"
                         android:layout_height="wrap_content" />
                     <ImageView
                         android:layout_width="1dp"
@@ -409,6 +417,7 @@
                 android:layout_weight="8"
                 android:textColor="#53B175"
                 android:gravity="center"
+                android:fontFamily="@font/taj"
                 android:textStyle="bold"
                 android:textSize="16dp"
                 android:text="@string/Logout"

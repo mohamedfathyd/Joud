@@ -2,25 +2,26 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     card_view:cardPreventCornerOverlap="false"
     android:layout_margin="5dp"
     card_view:cardBackgroundColor="#00000000"
     android:orientation="horizontal">
     <RelativeLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/relativelayout2"
         >
 
       <RelativeLayout
-          android:layout_width="180dp"
+          android:layout_width="320dp"
+          android:layout_centerInParent="true"
           android:background="@drawable/backshape3"
-          android:layout_height="142dp">
+          android:layout_height="192dp">
 <RelativeLayout
     android:layout_width="match_parent"
-    android:layout_height="102dp"
+    android:layout_height="152dp"
     android:layout_marginTop="30dp"
 
 
@@ -31,9 +32,10 @@
           <com.makeramen.roundedimageview.RoundedImageView
               android:id="@+id/image"
               android:layout_width="match_parent"
-              android:layout_height="80dp"
+              android:layout_height="130dp"
               android:layout_marginLeft="15dp"
               android:layout_marginTop="13dp"
+              android:scaleType="fitXY"
               android:layout_marginRight="15dp"
               />
           <TextView

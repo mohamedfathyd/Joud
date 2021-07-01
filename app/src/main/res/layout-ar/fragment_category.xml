@@ -42,6 +42,7 @@
                 android:textStyle="bold"
                 android:textColor="#000000"
                 android:text="@string/main"
+                android:fontFamily="@font/taj"
                 android:layout_gravity="center"
                 android:id="@+id/toolbar_title" />
 
@@ -86,6 +87,7 @@
                 android:textColor="@color/white"
                 android:id="@+id/textco"
                 android:textStyle="bold"
+                android:fontFamily="@font/taj"
                 android:gravity="center"
                 android:text="@string/myCard"
                 android:padding="5dp"
@@ -101,27 +103,34 @@
             android:layout_marginRight="18dp"
             android:textColor="#3E4958"
             android:textSize="19dp"
+            android:fontFamily="@font/taj"
             android:layout_marginTop="18dp"
             android:textStyle="bold"
             android:layout_gravity="center"
             android:text="البطاقة الذهبية"
             android:id="@+id/Cardname"
             />
-
+        <ScrollView
+            android:id="@+id/SCROLLER_ID"
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:scrollbars="vertical"
+            android:fillViewport="true">
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="match_parent"
                 android:layout_weight="5"
                 android:textStyle="normal"
                 android:layout_marginTop="10dp"
-                android:textSize="15dp"
+                android:textSize="14dp"
                 android:layout_gravity="center"
-                android:scrollbars = "vertical"
                 android:gravity="center"
+                android:fontFamily="@font/taj"
                 android:textColor="#000000"
                 android:id="@+id/carddetails"
                 android:text="تالنتيلانيستلانيتسبلانيبستلانيبتلانيبتلانيبتالنتيبسالنتيباليبنملتايبناتلنيب"
                 />
+        </ScrollView>
            <LinearLayout
                android:layout_width="match_parent"
                android:weightSum="10"
@@ -140,7 +149,7 @@
                    android:layout_gravity="end"
                    android:textStyle="bold"
                    android:textSize="15dp"
-                   android:id="@+id/price"
+                   android:id="@+id/price" android:fontFamily="@font/taj"
 
                    android:textColor="@color/blue"
                    android:text="@string/price"
@@ -158,6 +167,7 @@
                    android:textStyle="bold"
                    android:textSize="15dp"
                    android:textColor="@color/white"
+                   android:fontFamily="@font/taj"
                    android:text="@string/price"
                    android:layout_marginTop="18dp"
                    android:gravity="center"
@@ -175,6 +185,7 @@
             android:text="طلب الكارت"
             android:textColor="#ffffff"
             android:layout_marginTop="40dp"
+            android:fontFamily="@font/taj"
             android:textStyle="bold" />
         <Button
             android:id="@+id/cuntipay"
@@ -185,6 +196,7 @@
             android:background="@drawable/backshapeemptyblue"
             android:text="طلب والدفع ألكترونياً"
             android:textColor="@color/blue"
+            android:fontFamily="@font/taj"
             android:layout_marginTop="18dp"
             android:textStyle="bold"  />
     </LinearLayout>
