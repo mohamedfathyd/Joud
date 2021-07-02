@@ -26,7 +26,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activity.SelectLanguage"></activity>
+        <activity android:name=".Activity.attach_file"></activity>
+        <activity android:name=".Activity.SelectLanguage" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -38,7 +39,7 @@
                 android:resource="@xml/my_path" />
         </provider>
 
-        <activity android:name=".Activity.MainActivity"></activity>
+        <activity android:name=".Activity.MainActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

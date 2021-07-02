@@ -136,7 +136,7 @@ public class Categry_details_fragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if(sharedpref.getString("remember","").equals("yes")){
-                    fetchInfo(false);
+                    fetchInfo(false,"");
                    // payment();
                 }
                 else{
@@ -149,9 +149,10 @@ public class Categry_details_fragment extends Fragment {
             public void onClick(View view) {
                 if(sharedpref.getString("remember","").equals("yes")){
                     //fetchInfo();
-                     payment();
+                    fetchInfo(true,"bank_transfer");
                 }
                 else{
+                    startActivity(new Intent(getContext(),attach_file.class));
                     Toast.makeText(getContext(),"قم بتسجيل الدخول أولا" ,Toast.LENGTH_LONG).show();
                 }
             }
@@ -197,14 +198,14 @@ public class Categry_details_fragment extends Fragment {
 
     }
 
-    public void fetchInfo( boolean payment){
+    public void fetchInfo(final boolean payment, final String method){
         progressDialog = ProgressDialog.show(getContext(),"جاري تقديم طلبك","Please wait...",false,false);
         progressDialog.show();
          apiinterface= Apiclient_home.getapiClient().create(apiinterface_home.class);
         HashMap<String, String> headers = new HashMap<String, String>();
         headers.put("Accept","application/json");
         headers.put("Authorization","Bearer "+ sharedpref.getString("token",""));
-        Call<ResponseBody> call= apiinterface.content_addOrder(headers,sharedpref.getString("id",""),id,payment);
+        Call<ResponseBody> call= apiinterface.content_addOrder(headers,sharedpref.getString("id",""),id,payment,method);
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
@@ -221,13 +222,17 @@ public class Categry_details_fragment extends Fragment {
                         progressDialog.dismiss();
 
                         AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(getContext());
-                        dlgAlert.setMessage("تم تقديم الطلب بنجاح");
+                        dlgAlert.setMessage("تم ارسال طلب الشراء بنجاح و سوف يتم التواصل معك قريبا");
                         dlgAlert.setTitle("Joud");
                         dlgAlert.setIcon(R.drawable.logo);
                         dlgAlert.setPositiveButton("OK", null);
                         dlgAlert.setCancelable(true);
                         dlgAlert.create().show();
-
+                      if(method.equals("bank_transfer")){
+                          Intent i=new Intent(getContext(),attach_file.class);
+                          i.putExtra("id",id);
+                          startActivity(i);
+                      }
 
                     }
                     catch (Exception e){
@@ -286,7 +291,7 @@ public class Categry_details_fragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK && requestCode == PaymentParams.PAYMENT_REQUEST_CODE) {
-            fetchInfo(true);
+            fetchInfo(true,"");
             Log.e("Tag", data.getStringExtra(PaymentParams.RESPONSE_CODE));
             Log.e("Tag", data.getStringExtra(PaymentParams.TRANSACTION_ID));
             if (data.hasExtra(PaymentParams.TOKEN) && !data.getStringExtra(PaymentParams.TOKEN).isEmpty()) {

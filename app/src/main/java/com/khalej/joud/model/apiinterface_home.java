@@ -81,7 +81,7 @@ public interface apiinterface_home {
     @FormUrlEncoded
     @POST("api/orders")
     Call<ResponseBody> content_addOrder(@HeaderMap Map<String, String> headers, @Field("user_id") String user_id, @Field("card_id") String card_id,
-                                        @Field("payment")boolean payment
+                                        @Field("payment")boolean payment,@Field("payment_method") String payment_method
             );
 
     @FormUrlEncoded
@@ -106,6 +106,11 @@ public interface apiinterface_home {
     @Multipart
     @POST("api/profile/update/logo")
     Call<contact_general_user_update> getcontacts_updateProfile(@HeaderMap Map<String, String> headers,@Part MultipartBody.Part image);
+
+
+    @Multipart
+    @POST("api/orders/{id}/mark-as-paid")
+    Call<contact_general_user_update> getcontacts_order(@HeaderMap Map<String, String> headers,@Part MultipartBody.Part image,@Path("id") String user_id);
 
     @FormUrlEncoded
     @PATCH("api/profile/update/password")
