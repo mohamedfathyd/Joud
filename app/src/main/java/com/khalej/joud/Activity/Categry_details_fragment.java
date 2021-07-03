@@ -152,7 +152,7 @@ public class Categry_details_fragment extends Fragment {
                     fetchInfo(true,"bank_transfer");
                 }
                 else{
-                    startActivity(new Intent(getContext(),attach_file.class));
+                   // startActivity(new Intent(getContext(),attach_file.class));
                     Toast.makeText(getContext(),"قم بتسجيل الدخول أولا" ,Toast.LENGTH_LONG).show();
                 }
             }
