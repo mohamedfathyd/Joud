@@ -99,7 +99,7 @@ public class edit_fragment extends Fragment {
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.frame_container, fragment);
-                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.addToBackStack("tag");
                 fragmentTransaction.commit();
             }
         });

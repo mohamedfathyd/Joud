@@ -75,7 +75,7 @@ public class RecyclerAdapter_first_annonce extends RecyclerView.Adapter<Recycler
                 }
                 subCategoryFrag.setArguments(bundle);
                 activity.getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, subCategoryFrag)
-                        .addToBackStack(null).commit();
+                        .addToBackStack("tag").commit();
             }
 
         });

@@ -80,7 +80,7 @@ public class RecyclerAdapter_sub_annonce extends RecyclerView.Adapter<RecyclerAd
                 }
                 subCategoryFrag.setArguments(bundle);
                 activity.getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, subCategoryFrag)
-                        .addToBackStack(null).commit();
+                        .addToBackStack( "tag" ).commit();
             }
 
         });

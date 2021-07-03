@@ -92,7 +92,7 @@ public class RecyclerAdapter_companys extends RecyclerView.Adapter<RecyclerAdapt
                 }
                 subCategoryFrag.setArguments(bundle);
                 activity.getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, subCategoryFrag)
-                        .addToBackStack(null).commit();
+                        .addToBackStack( "tag" ).commit();;
             }
 
         });
