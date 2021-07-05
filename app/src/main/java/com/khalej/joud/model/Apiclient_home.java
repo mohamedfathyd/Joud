@@ -8,7 +8,7 @@ public class Apiclient_home {
     //http://jamalah.com/ http://jamalah.com/montag/Hoguzat
     // http://jamalah.com/montag/bazelt
     //https://applicationme.com/
-    private static final String url="https://good.applicationme.com/";
+    private static final String url="https://joudcard.com/";
 
     private static Retrofit retrofit =null;
     public static Retrofit getapiClient(){

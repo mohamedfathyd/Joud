@@ -60,6 +60,30 @@ public class contact_general_sub_category {
         String overview_by_lang;
         @SerializedName("media_links")
         String[] media_links;
+        @SerializedName("views_count")
+        String views_count;
+        @SerializedName("date_to")
+        String date_to;
+
+        public void setMedia_links(String[] media_links) {
+            this.media_links = media_links;
+        }
+
+        public String getViews_count() {
+            return views_count;
+        }
+
+        public void setViews_count(String views_count) {
+            this.views_count = views_count;
+        }
+
+        public String getDate_to() {
+            return date_to;
+        }
+
+        public void setDate_to(String date_to) {
+            this.date_to = date_to;
+        }
 
         public String getId() {
             return id;

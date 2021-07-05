@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.google.gson.JsonObject;
 import com.khalej.joud.Adapter.RecyclerAdapter_first_annonce;
 import com.khalej.joud.Adapter.RecyclerAdapter_first_annonce_banner;
@@ -40,6 +41,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import pl.droidsonroids.gif.GifImageView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -61,7 +63,7 @@ public class Main_fragment extends Fragment {
     int y = 0;
     Switch swtch;
     int id;
-    ProgressBar progressBar;
+    LottieAnimationView progressBar;
     ImageView notification;
     @SuppressLint("WrongConstant")
     @Override
@@ -77,7 +79,7 @@ public class Main_fragment extends Fragment {
         recyclerView2.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, true));
         recyclerView2.setHasFixedSize(true);
         layoutManager = new GridLayoutManager(getContext(), 2);
-        progressBar=(ProgressBar)view.findViewById(R.id.progressBar_subject);
+        progressBar=view.findViewById(R.id.progressBar_subject);
         progressBar.setVisibility(View.VISIBLE);
         notification.setOnClickListener(new View.OnClickListener() {
             @Override

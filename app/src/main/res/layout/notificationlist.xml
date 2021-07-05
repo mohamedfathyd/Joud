@@ -34,12 +34,12 @@
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
-                android:padding="4dp"
                 android:background="@drawable/backshapeempty"
                 android:orientation="horizontal" />
 <ImageView
-    android:layout_width="50dp"
-    android:layout_height="50dp"
+    android:layout_width="35dp"
+    android:layout_height="35dp"
+    android:layout_marginBottom="5dp"
     android:id="@+id/image"
     android:layout_gravity="center"
     android:background="@drawable/ic_notifications"
@@ -72,7 +72,7 @@
                         android:layout_marginBottom="5dp"
                         android:text="fish name"
                         android:textColor="@color/black"
-                        android:textSize="15dp"
+                        android:textSize="14dp"
                         android:textStyle="bold" />
                     <TextView
                         android:id="@+id/txt_title"
@@ -131,10 +131,10 @@
 
 
     </androidx.cardview.widget.CardView>
-    <view
+    <View
         android:layout_width="match_parent"
-        android:layout_height="0.3dp"
+        android:layout_height="0.5dp"
         android:layout_marginTop="5dp"
         android:layout_below="@id/card"
-        android:background="#f0f0f0"></view>
+        android:background="#f0f0f0"/>
 </RelativeLayout>

@@ -13,6 +13,7 @@ import android.widget.ProgressBar;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.khalej.joud.Adapter.RecyclerAdapter_companys;
 import com.khalej.joud.Adapter.RecyclerAdapter_first_annonce_banner;
 import com.khalej.joud.Adapter.RecyclerAdapter_sub_annonce;
@@ -56,7 +57,7 @@ public class company_fragment extends Fragment {
     Switch swtch;
     String id;
     TextView toolbar_title;
-    ProgressBar progressBar;
+    LottieAnimationView progressBar;
     ImageView notification;
     @SuppressLint("WrongConstant")
     @Override
@@ -67,7 +68,7 @@ public class company_fragment extends Fragment {
         recyclerView3=view.findViewById(R.id.recyclerview3);
         notification=view.findViewById(R.id.notification);
         layoutManager = new GridLayoutManager(getContext(), 2);
-        progressBar=(ProgressBar)view.findViewById(R.id.progressBar_subject);
+        progressBar=view.findViewById(R.id.progressBar_subject);
         progressBar.setVisibility(View.VISIBLE);
         notification.setOnClickListener(new View.OnClickListener() {
             @Override

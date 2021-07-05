@@ -13,6 +13,7 @@ import android.widget.SearchView;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.khalej.joud.Adapter.RecyclerAdapter_first_annonce;
@@ -58,7 +59,7 @@ public class Notification_fragment extends Fragment {
     int y = 0;
     Switch swtch;
     String id;
-    ProgressBar progressBar;
+    LottieAnimationView progressBar;
     SearchView searchView;
 
     @SuppressLint("WrongConstant")
@@ -70,7 +71,7 @@ public class Notification_fragment extends Fragment {
         recyclerView3=view.findViewById(R.id.recyclerview3);
         sharedpref = getActivity().getSharedPreferences("Education", Context.MODE_PRIVATE);
         edt = sharedpref.edit();
-        progressBar=(ProgressBar)view.findViewById(R.id.progressBar_subject);
+        progressBar=view.findViewById(R.id.progressBar_subject);
         progressBar.setVisibility(View.VISIBLE);
         layoutManager = new GridLayoutManager(getContext(), 1);
         StaggeredGridLayoutManager staggeredGridLayoutManager =

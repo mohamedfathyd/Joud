@@ -60,7 +60,7 @@ public class More_fragment extends Fragment {
     private SharedPreferences sharedpref;
     private SharedPreferences.Editor edt;
     CircleImageView image;
-    TextView name ,address,phone ;
+    TextView name ,address,phone,company ;
     LinearLayout logoutLinear;
     private contact_general_ contact;
     private  static final int IMAGEUser = 99;
@@ -113,6 +113,7 @@ public class More_fragment extends Fragment {
         youtube=view.findViewById(R.id.youtube);
         logoutLinear=view.findViewById(R.id.logoutLinear);
         noti=view.findViewById(R.id.noti);
+        company=view.findViewById(R.id.company);
         sharedpref = getActivity().getSharedPreferences("Education", Context.MODE_PRIVATE);
         edt = sharedpref.edit();
 
@@ -138,6 +139,17 @@ public class More_fragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Fragment fragment = new profile_fragment();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.frame_container, fragment);
+                fragmentTransaction.addToBackStack("tag");
+                fragmentTransaction.commit();
+            }
+        });
+        company.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment fragment = new company_fragment();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.frame_container, fragment);

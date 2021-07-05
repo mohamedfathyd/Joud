@@ -194,7 +194,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:background="@drawable/backshapeemptyblue"
-            android:text="طلب والدفع ألكترونياً"
+            android:text="طلب ورفع إيصال تحويلً"
             android:textColor="@color/blue"
             android:fontFamily="@font/taj"
             android:layout_marginTop="18dp"

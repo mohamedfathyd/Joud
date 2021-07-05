@@ -195,7 +195,7 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:background="@drawable/backshapeemptyblue"
-                    android:text="Online Pay"
+                    android:text="Order and attach receipt"
                     android:textColor="@color/blue"
                     android:fontFamily="@font/taj"
                     android:layout_marginTop="18dp"

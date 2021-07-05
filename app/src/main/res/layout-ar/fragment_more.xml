@@ -171,6 +171,42 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:orientation="horizontal"
+                    android:padding="5dp"
+                    android:weightSum="8"
+                    android:layout_marginTop="2dp"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.6"
+                        android:paddingEnd="5dp"
+                        android:background="@drawable/ic_companies_black"
+                        android:layout_height="30dp" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="6.6"
+                        android:paddingStart="15dp"
+                        android:layout_gravity="center"
+                        android:text="@string/company"
+                        android:fontFamily="@font/taj"
+                        android:textColor="@color/black"
+                        android:id="@+id/company"
+                        android:textSize="16dp"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.7"
+                        android:background="@drawable/ic_keyboard_arrow_left_black_24dp"
+                        android:layout_height="30dp" />
+
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="2dp"
+                    android:background="#909090" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
                     android:weightSum="8"
                     android:padding="5dp"
 
@@ -256,23 +292,24 @@
                         android:layout_width="0dp"
                         android:layout_weight="0.6"
                         android:paddingEnd="5dp"
-                        android:background="@drawable/ic_about_icon"
+                        android:background="@drawable/ic_global"
                         android:layout_height="30dp" />
                     <TextView
                         android:layout_width="0dp"
                         android:layout_weight="6.6"
                         android:paddingStart="15dp"
                         android:layout_gravity="center"
-                        android:text="@string/whous"
-                        android:textColor="@color/black"
-                        android:id="@+id/whous"
+                        android:text="English"
+                        android:gravity="right"
+                        android:id="@+id/language"
                         android:fontFamily="@font/taj"
+                        android:textColor="@color/black"
                         android:textSize="16dp"
                         android:layout_height="wrap_content" />
                     <ImageView
-                        android:layout_width="0dp"
+                        android:layout_width="1dp"
                         android:layout_weight="0.7"
-                        android:background="@drawable/ic_keyboard_arrow_left_black_24dp"
+                        android:background="@drawable/ic_g_translate_black_24dp"
                         android:layout_height="30dp" />
 
                 </LinearLayout>
@@ -281,7 +318,6 @@
                     android:layout_height="0.5dp"
                     android:layout_marginTop="2dp"
                     android:background="#909090" />
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:orientation="horizontal"
@@ -322,6 +358,45 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:orientation="horizontal"
+                    android:weightSum="8"
+                    android:padding="5dp"
+
+                    android:layout_marginTop="2dp"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.6"
+                        android:paddingEnd="5dp"
+                        android:background="@drawable/ic_about_icon"
+                        android:layout_height="30dp" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="6.6"
+                        android:paddingStart="15dp"
+                        android:layout_gravity="center"
+                        android:text="@string/whous"
+                        android:textColor="@color/black"
+                        android:id="@+id/whous"
+                        android:fontFamily="@font/taj"
+                        android:textSize="16dp"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.7"
+                        android:background="@drawable/ic_keyboard_arrow_left_black_24dp"
+                        android:layout_height="30dp" />
+
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="2dp"
+                    android:background="#909090" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
                     android:padding="5dp"
                     android:weightSum="8"
                     android:layout_marginTop="2dp"
@@ -357,44 +432,7 @@
                     android:layout_marginTop="2dp"
                     android:background="#909090" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:orientation="horizontal"
-                    android:weightSum="8"
-                    android:padding="5dp"
 
-                    android:layout_marginTop="2dp"
-                    android:layout_height="wrap_content">
-                    <ImageView
-                        android:layout_width="0dp"
-                        android:layout_weight="0.6"
-                        android:paddingEnd="5dp"
-                        android:background="@drawable/ic_global"
-                        android:layout_height="30dp" />
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="6.6"
-                        android:paddingStart="15dp"
-                        android:layout_gravity="center"
-                        android:text="English"
-                        android:gravity="right"
-                        android:id="@+id/language"
-                        android:fontFamily="@font/taj"
-                        android:textColor="@color/black"
-                        android:textSize="16dp"
-                        android:layout_height="wrap_content" />
-                    <ImageView
-                        android:layout_width="1dp"
-                        android:layout_weight="0.7"
-                        android:background="@drawable/ic_g_translate_black_24dp"
-                        android:layout_height="30dp" />
-
-                </LinearLayout>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0.5dp"
-                    android:layout_marginTop="2dp"
-                    android:background="#909090" />
 
             </LinearLayout>
            
@@ -404,7 +442,7 @@
             android:layout_height="55dp"
             android:background="@drawable/gray_shabe"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="35dp"
             android:layout_marginRight="50dp"
             android:layout_marginLeft="50dp"
             android:id="@+id/logoutLinear"

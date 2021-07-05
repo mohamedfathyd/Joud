@@ -42,7 +42,7 @@
                     android:layout_marginLeft="40dp"
                     android:layout_marginRight="10dp"
                     android:scaleType="fitXY"
-                    android:src="@drawable/logo" />
+                    android:background="@drawable/card" />
 
 
 

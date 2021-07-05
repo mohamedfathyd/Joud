@@ -55,6 +55,7 @@
                   android:layout_height="85dp"
                   android:scaleType="fitXY"
                   android:layout_marginLeft="20dp"
+                  android:src="@drawable/card"
                   android:layout_marginTop="10dp"
                   android:layout_marginRight="20dp" />
               <TextView

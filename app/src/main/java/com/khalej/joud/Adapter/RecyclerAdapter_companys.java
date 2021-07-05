@@ -69,10 +69,12 @@ public class RecyclerAdapter_companys extends RecyclerView.Adapter<RecyclerAdapt
                     holder.rec.setBackgroundResource(R.drawable.rectangleorangeen);
                 }
             }
+            try {
+                Glide.with(context).load("https://joudcard.com"+contactslist.get(position).getMedia_links()[0]).thumbnail(0.5f)
+                        .crossFade()
+                        .diskCacheStrategy(DiskCacheStrategy.ALL).error(R.drawable.card).into(holder.image);
+            }catch (Exception e){}
 
-            Glide.with(context).load(""+contactslist.get(position).getMedia_links()[0]).thumbnail(0.5f)
-                    .crossFade()
-                    .diskCacheStrategy(DiskCacheStrategy.ALL).error(R.drawable.card).into(holder.image);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

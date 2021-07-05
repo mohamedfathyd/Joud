@@ -220,7 +220,6 @@ public class Regester extends AppCompatActivity {
                 edt.putString("address",contactList.getPayload().getUser_info().getEmail());
                 edt.putString("type",contactList.getPayload().getUser_info().getType());
                 edt.putString("token",contactList.getPayload().getToken());
-                edt.putString("image",""+contactList.getPayload().getUser_info().getUserMedia().getLogo());
 
                     edt.putString("remember","yes");
                 edt.apply();

@@ -1,6 +1,8 @@
 package com.khalej.joud.Activity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.LayoutInflater;
@@ -73,6 +75,14 @@ public class Company_details_fragment extends Fragment {
         phone.setText( getArguments().getString("phone"));
         address=view.findViewById(R.id.address);
         address.setText(getArguments().getString("address"));
+        phone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:"+getArguments().getString("phone")));
+                startActivity(intent);
+            }
+        });
         notification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

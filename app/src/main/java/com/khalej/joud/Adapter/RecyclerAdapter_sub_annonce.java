@@ -52,15 +52,25 @@ public class RecyclerAdapter_sub_annonce extends RecyclerView.Adapter<RecyclerAd
             edt = sharedpref.edit();
             if(sharedpref.getString("language","").trim().equals("ar")){
                 holder.name.setText(contactslist.get(position).getName_by_lang());
+                holder.name_.setText(contactslist.get(position).getName_by_lang());
 
             }else{
                 holder.name.setText(contactslist.get(position).getName_by_lang());
+                holder.name_.setText(contactslist.get(position).getName_by_lang());
 
             }
-
-            Glide.with(context).load(""+contactslist.get(position).getMedia_links()).thumbnail(0.5f)
-                    .crossFade()
-                    .diskCacheStrategy(DiskCacheStrategy.ALL).error(R.drawable.card).into(holder.image);
+try {
+    holder.date.setText(contactslist.get(position).getDate_to());
+    holder.num_view.setText(contactslist.get(position).getViews_count());
+    Glide.with(context).load("https://joudcard.com" + contactslist.get(position).getMedia_links()).thumbnail(0.5f)
+            .crossFade()
+            .diskCacheStrategy(DiskCacheStrategy.ALL).error(R.drawable.card).into(holder.image);
+    holder.image.setBackgroundResource(0);
+}catch (Exception e){
+    Glide.with(context).load(R.drawable.card).thumbnail(0.5f)
+            .crossFade()
+            .diskCacheStrategy(DiskCacheStrategy.ALL).error(R.drawable.card).into(holder.image);
+}
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -94,13 +104,15 @@ public class RecyclerAdapter_sub_annonce extends RecyclerView.Adapter<RecyclerAd
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         ImageView image;
-        TextView name;
+        TextView name,name_,date,num_view;
 
         public MyViewHolder(View itemView) {
             super(itemView);
 
             image=(ImageView)itemView.findViewById(R.id.image);
             name=itemView.findViewById(R.id.name);
-
+            name_=itemView.findViewById(R.id.name_);
+            date=itemView.findViewById(R.id.date);
+            num_view=itemView.findViewById(R.id.numViews);
         }
     }}

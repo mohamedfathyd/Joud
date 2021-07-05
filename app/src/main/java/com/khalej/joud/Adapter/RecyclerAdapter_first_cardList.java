@@ -14,6 +14,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.khalej.joud.Activity.Sub_category_fragment;
 import com.khalej.joud.R;
+import com.khalej.joud.RoundRectCornerImageView;
 import com.khalej.joud.model.contact_category;
 import com.khalej.joud.model.contact_general_Mycards;
 
@@ -58,9 +59,13 @@ public class RecyclerAdapter_first_cardList extends RecyclerView.Adapter<Recycle
             }
             holder.active.setText(contactslist.get(position).getStatus());
             holder.details.setText(contactslist.get(position).getCards().getOverview_by_lang());
-            Glide.with(context).load(""+contactslist.get(position).getCards().getMedia_links()[0]).thumbnail(0.5f)
-                    .crossFade()
-                    .diskCacheStrategy(DiskCacheStrategy.ALL).error(R.drawable.card).into(holder.image);
+            try {
+                Glide.with(context).load("https://joudcard.com"+contactslist.get(position).getCards().getMedia_links()[0]).thumbnail(0.5f)
+                        .crossFade()
+                        .diskCacheStrategy(DiskCacheStrategy.ALL).error(R.drawable.card).into(holder.image);
+
+            }catch (Exception e){}
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -77,13 +82,13 @@ public class RecyclerAdapter_first_cardList extends RecyclerView.Adapter<Recycle
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
-        ImageView image;
+        RoundRectCornerImageView image;
         TextView name,details,active;
 
         public MyViewHolder(View itemView) {
             super(itemView);
 
-            image=(ImageView)itemView.findViewById(R.id.card_view);
+            image=itemView.findViewById(R.id.card_view);
             name=itemView.findViewById(R.id.Cardname);
             details=itemView.findViewById(R.id.carddetails);
             active=itemView.findViewById(R.id.active);

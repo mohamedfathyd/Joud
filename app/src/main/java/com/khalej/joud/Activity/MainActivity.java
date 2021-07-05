@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView chat;
         Intent intent;
     LinearLayout main,more,myorders,notification;
-    int x=0;
+    int x=1;
     Fragment fragment;
     private apiinterface_home apiinterface;
     ImageView mainImage,companyImage,profileImage,moreImage;
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
             int dpWidthInPx  = (int) (50 * scale);
             int dpHeightInPx = (int) (50 * scale);
             LinearLayout.LayoutParams parms = new LinearLayout.LayoutParams(dpWidthInPx,dpHeightInPx);
-            mainImage.setPadding(22,22,22,22);
+            mainImage.setPadding(32,32,32,32);
             mainImage.setLayoutParams(parms);
             mainImage.setBackgroundResource(R.drawable.backactive);
             mainImage.setImageResource(R.drawable.ic_home_white);
@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
             fragment.setArguments(bundle2);
             loadFragment(fragment);
 
-            x=0;
+            x=1;
         }
     });
         myorders.setOnClickListener(new View.OnClickListener() {
@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
             int dpWidthInPx  = (int) (50 * scale);
             int dpHeightInPx = (int) (50 * scale);
             LinearLayout.LayoutParams parms = new LinearLayout.LayoutParams(dpWidthInPx,dpHeightInPx);
-            companyImage.setPadding(22,22,22,22);
+            companyImage.setPadding(32,32,32,32);
             companyImage.setLayoutParams(parms);
             companyImage.setBackgroundResource(R.drawable.backactive);
             companyImage.setImageResource(R.drawable.ic_companies_white);
@@ -140,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
             int dpWidthInPx  = (int) (50 * scale);
             int dpHeightInPx = (int) (50 * scale);
             LinearLayout.LayoutParams parms = new LinearLayout.LayoutParams(dpWidthInPx,dpHeightInPx);
-            profileImage.setPadding(22,22,22,22);
+            profileImage.setPadding(32,32,32,32);
             profileImage.setLayoutParams(parms);
             profileImage.setBackgroundResource(R.drawable.backactive);
             profileImage.setImageResource(R.drawable.ic_profile_white);
@@ -160,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
             int dpWidthInPx  = (int) (50 * scale);
             int dpHeightInPx = (int) (50 * scale);
             LinearLayout.LayoutParams parms = new LinearLayout.LayoutParams(dpWidthInPx,dpHeightInPx);
-            moreImage.setPadding(22,22,22,22);
+            moreImage.setPadding(32,32,32,32);
             moreImage.setLayoutParams(parms);
             moreImage.setBackgroundResource(R.drawable.backactive);
             moreImage.setImageResource(R.drawable.ic_menu_active);
@@ -229,7 +229,7 @@ public class MainActivity extends AppCompatActivity {
         int dpWidthInPx  = (int) (50 * scale);
         int dpHeightInPx = (int) (50 * scale);
         LinearLayout.LayoutParams parms = new LinearLayout.LayoutParams(dpWidthInPx,dpHeightInPx);
-        mainImage.setPadding(22,22,22,22);
+        mainImage.setPadding(32,32,32,32);
         mainImage.setLayoutParams(parms);
         mainImage.setBackgroundResource(R.drawable.backactive);
         mainImage.setImageResource(R.drawable.ic_home_white);

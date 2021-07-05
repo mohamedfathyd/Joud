@@ -45,7 +45,7 @@ public class RecyclerAdapter_first_annonce_banner extends RecyclerView.Adapter<R
         try {
 
 
-            Glide.with(context).load(""+contactslist.get(position)).thumbnail(0.5f)
+            Glide.with(context).load("https://joudcard.com"+contactslist.get(position)).thumbnail(0.5f)
                     .crossFade()
                     .diskCacheStrategy(DiskCacheStrategy.ALL).error(R.drawable.logo).into(holder.image);
         }
@@ -58,7 +58,7 @@ public class RecyclerAdapter_first_annonce_banner extends RecyclerView.Adapter<R
                 settingsDialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
                 settingsDialog.setContentView(R.layout.image_show);
                 ImageView img = (ImageView) settingsDialog.findViewById(R.id.img);
-                Glide.with(context).load(""+contactslist.get(position)).error(R.drawable.logo).into(img);
+                Glide.with(context).load("https://joudcard.com"+contactslist.get(position)).error(R.drawable.logo).into(img);
                 settingsDialog.show();
             }
 

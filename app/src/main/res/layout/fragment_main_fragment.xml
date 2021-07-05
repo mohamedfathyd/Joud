@@ -57,7 +57,7 @@
     </LinearLayout>
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="170dp"
+            android:layout_height="200dp"
             android:background="@drawable/shapea"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
@@ -89,13 +89,14 @@
     </LinearLayout>
     </ScrollView>
     </RelativeLayout>
-    <ProgressBar
+    <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/progressBar_subject"
         style="?android:attr/progressBarStyleLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:indeterminateDrawable="@drawable/progress"
-
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        app:lottie_rawRes="@raw/card"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
         android:layout_centerInParent="true"
         android:layout_gravity="center"
         android:indeterminate="false"

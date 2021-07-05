@@ -57,10 +57,11 @@ public class RecyclerAdapter_first_annonce extends RecyclerView.Adapter<Recycler
                 holder.name.setText(contactslist.get(position).getEn_name());
 
             }
-
-            Glide.with(context).load(""+contactslist.get(position).getIcon()).thumbnail(0.5f)
-                    .crossFade()
-                    .diskCacheStrategy(DiskCacheStrategy.ALL).error(R.drawable.card).into(holder.image);
+//try {
+//    Glide.with(context).load("https://joudcard.com" + contactslist.get(position).getIcon()).thumbnail(0.5f)
+//            .crossFade()
+//            .diskCacheStrategy(DiskCacheStrategy.ALL).error(R.drawable.card).into(holder.image);
+//}catch (Exception e){}
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

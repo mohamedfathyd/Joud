@@ -16,6 +16,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.khalej.joud.Activity.Sub_category_fragment;
 import com.khalej.joud.R;
+import com.khalej.joud.RoundRectCornerImageView;
 import com.khalej.joud.model.contact_category;
 
 import java.util.ArrayList;
@@ -53,10 +54,17 @@ public class RecyclerAdapter_first_annonce_ extends RecyclerView.Adapter<Recycle
         sharedpref = context.getSharedPreferences("Education", Context.MODE_PRIVATE);
             edt = sharedpref.edit();
 
+try {
+    Glide.with(context).load("https://joudcard.com"+contactslist.get(position)).thumbnail(0.5f)
+            .crossFade()
+            .diskCacheStrategy(DiskCacheStrategy.ALL).error(R.drawable.card).into(holder.image);
+    holder.image.setBackgroundResource(0);
+}catch (Exception e){
+    Glide.with(context).load(R.drawable.card).thumbnail(0.5f)
+            .crossFade()
+            .diskCacheStrategy(DiskCacheStrategy.ALL).error(R.drawable.card).into(holder.image);
+}
 
-            Glide.with(context).load(""+contactslist.get(position)).thumbnail(0.5f)
-                    .crossFade()
-                    .diskCacheStrategy(DiskCacheStrategy.ALL).error(R.drawable.card).into(holder.image);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,7 +72,7 @@ public class RecyclerAdapter_first_annonce_ extends RecyclerView.Adapter<Recycle
                 settingsDialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
                 settingsDialog.setContentView(R.layout.image_show);
                 ImageView img = (ImageView) settingsDialog.findViewById(R.id.img);
-                Glide.with(context).load(""+contactslist.get(position)).error(R.drawable.logo).into(img);
+                Glide.with(context).load("https://joudcard.com"+contactslist.get(position)).error(R.drawable.logo).into(img);
                 settingsDialog.show();
             }
 
@@ -78,13 +86,13 @@ public class RecyclerAdapter_first_annonce_ extends RecyclerView.Adapter<Recycle
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
-        ImageView image;
+        RoundRectCornerImageView image;
         TextView name;
 
         public MyViewHolder(View itemView) {
             super(itemView);
 
-            image=(ImageView)itemView.findViewById(R.id.photo);
+            image=itemView.findViewById(R.id.photo);
             name=itemView.findViewById(R.id.name);
 
         }
